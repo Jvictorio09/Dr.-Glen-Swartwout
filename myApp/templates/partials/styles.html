@@ -1,0 +1,330 @@
+<style>
+    /* Global transition tone */
+    * { @apply transition-all duration-300 ease-out; }
+
+    /* Headings use IBM Plex Serif for scientific credibility */
+    h1, h2, h3, .stat-number, .hero-emphasis { font-family: 'IBM Plex Serif', serif; letter-spacing: -0.02em; font-weight: 600; }
+
+    /* Body stays Inter for readability with increased line-height */
+    body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.7; }
+
+    /* Glass Card Recipe (applied via class="glass-card") - Light Theme */
+    .glass-card {
+        position: relative; overflow: hidden; border-radius: 0.75rem;
+        background: rgba(255,255,255,0.90); /* premium white */
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(148,163,184,0.3);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
+        transition: transform 0.45s ease-out, box-shadow 0.45s ease-out, border-color 0.45s ease-out;
+    }
+
+    .glass-card::before {
+        content: ''; pointer-events: none; position: absolute; inset: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 35%, transparent 60%);
+        mix-blend-mode: normal;
+    }
+
+    .glass-card::after {
+        content: ''; pointer-events: none; position: absolute; left: 1.5rem; right: 1.5rem; top: 0; height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(212,165,116,0.4) 50%, transparent 100%);
+        opacity: 0.9;
+    }
+
+    .glass-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 30px 90px rgba(212,165,116,0.25), 0 1px 0 rgba(255,255,255,0.9) inset; border-color: rgba(212,165,116,0.4); }
+    .glass-card:hover { ring: 1px; }
+
+    /* Divider */
+    .divider-premium { height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(215,164,90,0.25) 50%, transparent 100%); }
+
+    /* Nav link styling */
+    nav a { position: relative; }
+    nav a::after { content: ''; position: absolute; bottom: -2px; left: 50%; width: 0; height: 1px; background: rgba(212,165,116,0.6); transition: width 0.4s ease-out, left 0.4s ease-out; }
+    nav a:hover::after { width: 100%; left: 0; }
+
+    /* Buttons */
+    .btn-primary, .btn-prestige {
+        position: relative; display:inline-flex; align-items:center; justify-content:center; gap:0.6rem;
+        padding: 0.65rem 1.25rem; border-radius: 0.75rem; font-weight:600;
+        transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, filter 0.35s ease-out, background 0.35s ease-out;
+        overflow: visible; border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .btn-primary { background: linear-gradient(90deg,#21472d,#1a3824); color: #ffffff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.2); }
+    .btn-prestige { background: linear-gradient(90deg,#21472d,#1a3824); color: #ffffff; }
+
+    .btn-primary:hover, .btn-prestige:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 60px rgba(215,164,90,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+        filter: drop-shadow(0 10px 30px rgba(215,164,90,0.25));
+    }
+
+    .btn-primary:focus, .btn-prestige:focus { outline: none; box-shadow: 0 18px 60px rgba(215,164,90,0.25), 0 0 0 4px rgba(255,255,255,0.03); }
+
+    .btn-glass-outline {
+        background: rgba(255,255,255,0.9); border: 1px solid rgba(148,163,184,0.4);
+        color: #0f172a; padding: 0.55rem 0.95rem; border-radius: 0.75rem;
+        transition: box-shadow 0.35s ease-out, transform 0.35s ease-out, background 0.35s ease-out;
+    }
+    .btn-glass-outline:hover {
+        transform: translateY(-2px); background: rgba(255,255,255,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Accent highlight (hero) */
+    .hero-emphasis { background: linear-gradient(135deg, rgba(215,164,90,0.12) 0%, rgba(215,164,90,0.06) 100%); padding: 0 .5rem; border-radius: 0.25rem; }
+
+    /* Modern gradient underline for section titles */
+    .section-title-accent {
+        display: inline-block; position: relative; margin-top: 0.75rem;
+    }
+
+    .section-title-accent::after {
+        content: ''; position: absolute; bottom: -0.75rem; left: 0; height: 2px;
+        background: linear-gradient(90deg, rgba(250,204,21,0.8) 0%, rgba(250,193,34,0.4) 50%, transparent 100%);
+        width: 100%; max-width: 260px; transition: opacity 0.3s ease-out;
+    }
+
+    .section-title-accent:hover::after {
+        opacity: 1;
+    }
+
+    /* Animation: Premium fade-in with longer duration for scientific pacing */
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(24px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards !important; }
+
+    /* Stagger helpers (kept small) */
+    .stagger-1 { animation-delay: 0.08s; }
+    .stagger-2 { animation-delay: 0.16s; }
+    .stagger-3 { animation-delay: 0.24s; }
+    .stagger-4 { animation-delay: 0.32s; }
+    .stagger-5 { animation-delay: 0.40s; }
+    .stagger-6 { animation-delay: 0.48s; }
+
+    /* The Difference: interactive comparison rows */
+    .comparison-card .comparison-header { position: sticky; top: 0; z-index: 10; background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.00)); }
+    .comparison-row { display: grid; grid-template-columns: 1fr; border-bottom: 1px solid rgba(255,255,255,0.03); transition: background 0.25s ease, box-shadow 0.25s ease; }
+    @media (min-width: 768px) { .comparison-row { grid-template-columns: 1fr 1fr; } }
+    .comparison-row .comparison-left, .comparison-row .comparison-right { padding: 1.5rem; transition: background 0.25s ease, transform 0.25s ease; }
+    .comparison-row:hover { background: rgba(255,255,255,0.01); }
+    .comparison-row:hover .comparison-left { background: linear-gradient(90deg, rgba(59,130,246,0.03), transparent); }
+    .comparison-row:hover .comparison-right { background: linear-gradient(90deg, rgba(212,165,90,0.03), transparent); }
+    .comparison-left .icon, .comparison-right .icon { width: 1.5rem; height: 1.5rem; display:inline-flex; align-items:center; justify-content:center; }
+    .comparison-card .row-title { font-weight:700; margin-bottom:0.25rem; }
+    .comparison-card .row-desc { color: rgba(255,255,255,0.72); font-size:0.95rem; }
+
+    /* Stacked Contrast Cards (The Difference redesign) */
+    .contrast-card-pair {
+        position: relative; display: flex; flex-direction: column; gap: 0;
+        background: rgba(255,255,255,0.04); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+        border: 1px solid rgba(255,255,255,0.08); border-radius: 1.5rem;
+        overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        transition: transform 0.45s ease-out, box-shadow 0.45s ease-out, border-color 0.45s ease-out;
+    }
+
+    .contrast-card-pair::before {
+        content: ''; position: absolute; inset: 0; z-index: 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%);
+        pointer-events: none; border-radius: 1.5rem;
+    }
+
+    .contrast-card-pair:hover {
+        transform: translateY(-4px); border-color: rgba(255,255,255,0.12);
+        box-shadow: 0 30px 90px rgba(215,164,90,0.18), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .contrast-pair-header {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+        padding: 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+        background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+        position: relative; z-index: 1;
+    }
+
+    .contrast-pair-header > div {
+        display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.25rem;
+        font-size: 0.75rem; font-weight: 700; letter-spacing: 0.025em; color: rgba(255,255,255,0.7);
+        text-transform: uppercase; border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .contrast-pair-header > div:last-child { border-right: none; }
+
+    .contrast-pair-header i { font-size: 0.85rem; }
+
+    /* Problem block (left frustration) */
+    .contrast-block-problem {
+        position: relative; z-index: 1; padding: 1.5rem; padding-left: 2.75rem; display: flex;
+        background: linear-gradient(90deg, rgba(239,68,68,0.03), transparent 80%);
+        border-left: 3px solid rgba(239,68,68,0.2);
+    }
+
+    .contrast-block-problem::before {
+        content: ''; position: absolute; left: 0.75rem; top: 1.75rem;
+        width: 8px; height: 8px; border-radius: 50%; background: rgba(239,68,68,0.6);
+    }
+
+    .contrast-block-problem p { color: rgba(255,255,255,0.85); }
+    .contrast-block-problem strong { color: rgb(255,255,255); font-weight: 600; }
+    .contrast-block-problem .block-desc { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem; display: block; }
+
+    /* Divider */
+    .contrast-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent); margin: 0; position: relative; z-index: 1; }
+
+    /* Solution block (right paradigm) */
+    .contrast-block-solution {
+        position: relative; z-index: 1; padding: 1.5rem; padding-left: 2.75rem; display: flex;
+        background: linear-gradient(90deg, rgba(34,197,94,0.02), transparent 80%);
+        border-left: 3px solid rgba(34,197,94,0.2);
+        transition: background 0.4s ease-out, box-shadow 0.4s ease-out;
+    }
+
+    .contrast-block-solution::before {
+        content: ''; position: absolute; left: 0.75rem; top: 1.75rem;
+        width: 8px; height: 8px; border-radius: 50%; background: rgba(215,164,90,0.7);
+    }
+
+    .contrast-card-pair:hover .contrast-block-solution {
+        background: linear-gradient(90deg, rgba(34,197,94,0.08), transparent 80%);
+        box-shadow: inset 0 1px 8px rgba(215,164,90,0.08);
+    }
+
+    .contrast-block-solution p { color: rgba(255,255,255,0.9); }
+    .contrast-block-solution strong { color: rgb(255,255,255); font-weight: 600; }
+    .contrast-block-solution .block-desc { font-size: 0.95rem; color: rgba(255,255,255,0.75); margin-top: 0.5rem; display: block; }
+
+    /* Stepper Carousel (The Difference redesign v2) */
+    .carousel-container {
+        position: relative;
+        background: #ffffff; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+        border: 1px solid rgba(148,163,184,0.3); border-radius: 2rem;
+        overflow: hidden; box-shadow: 0 20px 80px rgba(0,0,0,0.12);
+        padding: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-container { padding: 2rem; }
+    }
+
+    .carousel-container::before {
+        content: ''; position: absolute; inset: 0; z-index: 0;
+        background: linear-gradient(135deg, rgba(253,244,216,0.3) 0%, transparent 50%);
+        pointer-events: none; border-radius: 2rem;
+    }
+
+    .carousel-content {
+        position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0;
+    }
+
+    .carousel-block {
+        display: flex; flex-direction: column; gap: 0.5rem;
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .carousel-block.exiting { opacity: 0; transform: translateX(-20px); }
+    .carousel-block.entering { animation: carouselFadeIn 0.4s ease-out forwards; }
+
+    @keyframes carouselFadeIn {
+        0% { opacity: 0; transform: translateX(20px); }
+        100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .carousel-chip {
+        display: inline-flex; align-items: center; gap: 0.5rem; width: fit-content;
+        padding: 0.4rem 0.9rem; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 700;
+        letter-spacing: 0.02em; text-transform: uppercase; color: #0f172a;
+        background: #fdf4d8; border: 1px solid rgba(148,163,184,0.2);
+    }
+
+    .carousel-chip i { font-size: 0.75rem; }
+
+    .carousel-title { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 0.6rem; }
+    .carousel-desc { font-size: 1rem; color: #334155; line-height: 1.7; margin-top: 0.5rem; }
+
+    .carousel-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(148,163,184,0.3), transparent); margin: 1.5rem 0; }
+
+    /* Horizontal Stepper Row (under Paradigm chip) */
+    .carousel-stepper {
+        position: relative; z-index: 1; display: flex; gap: 0.75rem;
+        align-items: center; justify-content: flex-start;
+        overflow-x: auto; padding-bottom: 0.5rem; margin: 1rem 0 1.5rem 0;
+        scroll-behavior: smooth;
+    }
+
+    .carousel-stepper::-webkit-scrollbar { height: 2px; }
+    .carousel-stepper::-webkit-scrollbar-track { background: transparent; }
+    .carousel-stepper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 2px; }
+
+    .stepper-step {
+        width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        border-radius: 50%; background: rgba(148,163,184,0.1); border: 1px solid rgba(148,163,184,0.3);
+        font-size: 0.65rem; font-weight: 700; color: #64748b;
+        cursor: pointer; transition: all 0.3s ease-out;
+    }
+
+    .stepper-step:hover { background: rgba(33,71,45,0.1); border-color: rgba(33,71,45,0.3); color: #21472d; }
+
+    .stepper-step.active {
+        background: linear-gradient(135deg, #21472d, #1a3824); color: #ffffff;
+        border-color: rgba(33,71,45,0.4); box-shadow: 0 0 16px rgba(33,71,45,0.25);
+    }
+
+    /* Carousel Controls (arrows) */
+    .carousel-arrow {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+        background: rgba(255,255,255,0.9); border: 1px solid rgba(148,163,184,0.3); border-radius: 50%;
+        cursor: pointer; color: #21472d; z-index: 10;
+        transition: all 0.3s ease-out; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .carousel-arrow:hover { background: #21472d; border-color: #21472d; color: #ffffff; box-shadow: 0 4px 12px rgba(33,71,45,0.3); }
+
+    .carousel-arrow.left { left: 1rem; }
+    .carousel-arrow.right { right: 1rem; }
+
+    .carousel-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    /* Pill badges (Get Started, Most Popular) */
+    .pill-badge, .pill-badge-gold {
+        display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.25rem 0.6rem; border-radius: 9999px;
+        font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em;
+        background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.06);
+    }
+    .pill-badge-gold { 
+        background: #21472d; 
+        color: #ffffff; 
+        border: 1px solid rgba(33, 71, 45, 0.2); 
+        padding: 0.375rem 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 2px 4px rgba(33, 71, 45, 0.15);
+    }
+    .pill-badge-gold.text-xs { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
+    .glass-card { overflow: visible; }
+
+    /* ===== SCIENTIFIC IMAGERY BACKGROUNDS ===== */
+    
+    /* Hero: Biofield Energy — Soft radial gradients with quantum aesthetic */
+    .hero-bg {
+        background: radial-gradient(ellipse 900px 600px at 60% -20%, rgba(30,144,255,0.08) 0%, transparent 35%),
+                    radial-gradient(ellipse 700px 700px at 10% 80%, rgba(147,51,234,0.06) 0%, transparent 40%),
+                    radial-gradient(ellipse 500px 500px at 85% 85%, rgba(212,165,116,0.04) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    /* Dr. Glen Profile: Neural/Cellular Intelligence — Blue-purple-slate spectrum */
+    .profile-bg-scientific {
+        background: radial-gradient(ellipse 800px 600px at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 45%),
+                    linear-gradient(135deg, rgba(91,33,182,0.05) 0%, transparent 60%),
+                    radial-gradient(ellipse 400px 400px at 100% 100%, rgba(212,165,116,0.02) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    /* Outcomes Cards: Clinical Laboratory Aesthetic — Subtle layered blues */
+    .outcome-bg-clinical {
+        background: linear-gradient(135deg, rgba(30,144,255,0.04) 0%, rgba(71,85,105,0.02) 100%);
+    }
+</style>
+

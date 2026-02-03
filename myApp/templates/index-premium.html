@@ -30,7 +30,9 @@
                             900: '#0f172a',
                             950: '#020617',
                         },
-                        gold: '#d4a574',
+                        green: '#21472d',
+                        'light-yellow': '#fdf4d8',
+                        gold: '#21472d', // Using green as primary accent
                         sage: '#7c9a8a',
                     },
                     spacing: {
@@ -74,93 +76,88 @@
     
     <style>
         /* Minimal essential styles */
-        html.dark { color-scheme: dark; }
-        
         * {
             @apply transition-colors duration-300;
         }
         
-        /* Glass card base */
+        /* Glass card base - premium light theme */
         .glass-card {
-            @apply bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-white/30 dark:border-white/10 shadow-glass dark:shadow-glass-dark;
+            @apply bg-white/90 backdrop-blur-xl border border-slate-200/60 shadow-glass;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
         }
         
         /* Gradient divider */
         .divider-gradient {
-            @apply h-px bg-gradient-to-r from-transparent via-slate-200/80 dark:via-white/10 to-transparent;
+            @apply h-px bg-gradient-to-r from-transparent via-slate-300/60 to-transparent;
         }
         
         /* Premium button base */
         .btn-premium {
             @apply relative px-6 py-3 rounded-xl font-semibold transition-all duration-300 ease-out;
-            @apply hover:-translate-y-0.5 hover:shadow-lift dark:hover:shadow-lift-dark;
+            @apply hover:-translate-y-0.5 hover:shadow-lift;
         }
         
         /* Glow ring on hover */
         .glow-ring {
-            @apply hover:ring-1 hover:ring-slate-900/10 dark:hover:ring-white/10 transition-all duration-300;
+            @apply hover:ring-1 hover:ring-slate-900/10 transition-all duration-300;
         }
     </style>
 </head>
-<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300">
+<body class="bg-white text-slate-900 transition-colors duration-300">
     
-    <!-- Background gradient blobs (prestige) -->
+    <!-- Background gradient blobs (prestige light theme) -->
     <div class="fixed inset-0 -z-10 overflow-hidden">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-slate-900/5 to-transparent rounded-full blur-3xl dark:from-white/5"></div>
-        <div class="absolute top-40 right-0 w-96 h-96 bg-gradient-to-bl from-gold/5 to-transparent rounded-full blur-3xl dark:from-gold/3"></div>
-        <div class="absolute bottom-0 left-1/2 w-full h-96 bg-gradient-to-t from-slate-200/30 to-transparent dark:from-white/5 blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-light-yellow/30 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute top-40 right-0 w-96 h-96 bg-gradient-to-bl from-green/8 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/2 w-full h-96 bg-gradient-to-t from-light-yellow/20 to-transparent blur-3xl"></div>
     </div>
 
     <!-- Floating Mobile CTA Bar -->
-    <div class="fixed bottom-0 left-0 right-0 lg:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-white/30 dark:border-white/10 px-4 py-3 safe-bottom z-40 shadow-lift">
+    <div class="fixed bottom-0 left-0 right-0 lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200/60 px-4 py-3 safe-bottom z-40 shadow-lift">
         <div class="flex gap-2 max-w-md mx-auto">
-            <button class="flex-1 px-4 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-medium text-sm transition-all hover:-translate-y-0.5 hover:shadow-lift">
+            <button class="flex-1 px-4 py-2.5 rounded-lg bg-slate-100 text-slate-900 font-medium text-sm transition-all hover:-translate-y-0.5 hover:shadow-lift hover:bg-slate-200">
                 <i class="fas fa-microphone mr-1.5"></i> Free Scan
             </button>
-            <button class="flex-1 px-4 py-2.5 rounded-lg bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 font-medium text-sm transition-all hover:-translate-y-0.5 hover:shadow-lift">
+            <button class="flex-1 px-4 py-2.5 rounded-lg bg-gradient-to-r from-green to-green/90 text-white font-medium text-sm transition-all hover:-translate-y-0.5 hover:shadow-lift hover:from-green/90 hover:to-green/80">
                 Begin Healing <i class="fas fa-arrow-right ml-1.5"></i>
             </button>
         </div>
     </div>
 
     <!-- Sticky Navigation (Glass Action Bar) -->
-    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-white/30 dark:border-white/10 shadow-glass">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/60 shadow-glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Wordmark -->
                 <div class="flex items-center gap-2 flex-shrink-0">
-                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 flex items-center justify-center">
-                        <i class="fas fa-wand-magic-sparkles text-white dark:text-slate-900 text-sm"></i>
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-green to-green/80 flex items-center justify-center">
+                        <i class="fas fa-wand-magic-sparkles text-white text-sm"></i>
                     </div>
                     <div class="hidden sm:block">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white">Dr. Glen</p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Wellness</p>
+                        <p class="text-sm font-semibold text-slate-900">Dr. Glen</p>
+                        <p class="text-xs text-slate-600">Wellness</p>
                     </div>
                 </div>
                 
                 <!-- Desktop Nav -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="#evidence" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Evidence</a>
-                    <a href="#stories" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Stories</a>
-                    <a href="#programs" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Programs</a>
-                    <a href="#about" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
-                    <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
-                    <button class="btn-premium px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700">
+                    <a href="#evidence" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Evidence</a>
+                    <a href="#stories" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Stories</a>
+                    <a href="#programs" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Programs</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
+                    <div class="h-6 w-px bg-slate-300"></div>
+                    <button class="btn-premium px-4 py-2 rounded-lg bg-slate-100 text-slate-900 hover:bg-slate-200">
                         <i class="fas fa-microphone mr-2"></i>Free Scan
                     </button>
                 </div>
                 
-                <!-- Right: CTA + Dark Toggle -->
+                <!-- Right: CTA -->
                 <div class="flex items-center gap-3">
-                    <button id="darkModeToggle" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i class="fas fa-moon text-slate-600 dark:hidden"></i>
-                        <i class="fas fa-sun text-slate-400 hidden dark:block"></i>
-                    </button>
-                    <button class="hidden lg:block btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-6 py-2.5">
+                    <button class="hidden lg:block btn-premium bg-gradient-to-r from-green to-green/90 text-white px-6 py-2.5 hover:from-green/90 hover:to-green/80">
                         Get Started
                     </button>
-                    <button class="lg:hidden p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800">
-                        <i class="fas fa-bars text-slate-900 dark:text-white"></i>
+                    <button class="lg:hidden p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200">
+                        <i class="fas fa-bars text-slate-900"></i>
                     </button>
                 </div>
             </div>
@@ -170,105 +167,105 @@
     <!-- ===== SECTION 1: HERO ===== -->
     <section class="relative overflow-hidden pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 lg:mb-16">
         <!-- Hero spotlight -->
-        <div class="absolute top-20 left-1/3 w-96 h-96 bg-gradient-radial from-slate-900/20 to-transparent blur-3xl dark:from-white/10 -z-10"></div>
+        <div class="absolute top-20 left-1/3 w-96 h-96 bg-gradient-radial from-green/10 to-transparent blur-3xl -z-10"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left: Editorial Copy -->
                 <div class="space-y-8">
                     <div>
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 text-xs font-semibold text-slate-900 dark:text-slate-300 mb-6">
-                            <i class="fas fa-sparkles text-gold"></i> The Paradigm Breaker
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-light-yellow text-xs font-semibold text-slate-900 mb-6 border border-green/20">
+                            <i class="fas fa-sparkles text-green"></i> The Paradigm Breaker
                         </span>
                         
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
-                            Reverse the<br/><span class="text-gold">"Irreversible."</span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 leading-tight mb-6">
+                            Reverse the<br/><span class="text-green">"Irreversible."</span>
                         </h1>
                         
-                        <p class="text-xl sm:text-2xl font-medium text-slate-700/90 dark:text-slate-200/90 mb-8">
+                        <p class="text-xl sm:text-2xl font-medium text-slate-700 mb-8">
                             Heal 12× faster than you age.
                         </p>
                     </div>
                     
-                    <p class="text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-xl">
+                    <p class="text-base sm:text-lg leading-relaxed text-slate-600 max-w-xl">
                         Your body isn't broken. It knows how to heal. For 40+ years, I've helped thousands reverse conditions labeled "incurable"—glaucoma, macular degeneration, cataracts, chronic degeneration, brain-based decline—using syntropy, biofield intelligence, and the Clinical Theory of Everything.
                     </p>
                     
                     <!-- Trust Capsules -->
                     <div class="flex flex-wrap gap-3 pt-4">
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
                             <i class="fas fa-graduation-cap"></i> Dartmouth-trained
                         </span>
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
                             <i class="fas fa-heart-pulse"></i> Medical Empath
                         </span>
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
                             <i class="fas fa-flask"></i> 150+ Formulations
                         </span>
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">
                             <i class="fas fa-bolt"></i> 40+ Years
                         </span>
                     </div>
                     
                     <!-- CTAs -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-8 py-3.5 flex items-center justify-center">
+                        <button class="btn-premium bg-gradient-to-r from-green to-green/90 text-white px-8 py-3.5 flex items-center justify-center hover:from-green/90 hover:to-green/80 shadow-lg">
                             Begin Accelerated Healing <i class="fas fa-arrow-right ml-2"></i>
                         </button>
-                        <button class="btn-premium border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-900 px-8 py-3.5 flex items-center justify-center">
+                        <button class="btn-premium border-2 border-slate-300 text-slate-900 hover:bg-light-yellow px-8 py-3.5 flex items-center justify-center hover:border-green/40">
                             How Your Body Communicates <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
                     
                     <!-- Credibility Strip -->
-                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400 pt-4 leading-relaxed">
+                    <p class="text-xs font-medium text-slate-600 pt-4 leading-relaxed">
                         Dartmouth-trained doctor • Medical empath • 150+ handcrafted Functional Formulations • 40+ years of clinical breakthroughs
                     </p>
                 </div>
                 
                 <!-- Right: Proof Panel (Glass Card) -->
                 <div class="hidden lg:block">
-                    <div class="glass-card rounded-2xl p-8 border-2 border-gold/30">
+                    <div class="glass-card rounded-2xl p-8 border-2 border-green/40 shadow-lg">
                         <div class="space-y-8">
-                            <div class="text-center pb-8 border-b border-white/20 dark:border-white/10">
-                                <i class="fas fa-chart-line text-5xl text-gold/70 mb-4 inline-block"></i>
-                                <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">What Changes</h3>
+                            <div class="text-center pb-8 border-b border-slate-200">
+                                <i class="fas fa-chart-line text-5xl text-green mb-4 inline-block"></i>
+                                <h3 class="text-2xl font-semibold text-slate-900">What Changes</h3>
                             </div>
                             
                             <div class="space-y-6">
                                 <div class="flex gap-4">
-                                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-tachometer-alt text-gold"></i>
+                                    <div class="w-12 h-12 rounded-xl bg-light-yellow flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-tachometer-alt text-green"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-slate-900 dark:text-white mb-1">12× Faster Healing</p>
-                                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Prognosis of blindness reversed. 36 years of biological aging in 36 months.</p>
+                                        <p class="font-semibold text-slate-900 mb-1">12× Faster Healing</p>
+                                        <p class="text-xs text-slate-600 leading-relaxed">Prognosis of blindness reversed. 36 years of biological aging in 36 months.</p>
                                     </div>
                                 </div>
                                 
                                 <div class="flex gap-4">
-                                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-bullseye text-gold"></i>
+                                    <div class="w-12 h-12 rounded-xl bg-light-yellow flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-bullseye text-green"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-slate-900 dark:text-white mb-1">100% Personalized</p>
-                                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Biofield Analysis guides every remedy. Real-time customization, no guesswork.</p>
+                                        <p class="font-semibold text-slate-900 mb-1">100% Personalized</p>
+                                        <p class="text-xs text-slate-600 leading-relaxed">Biofield Analysis guides every remedy. Real-time customization, no guesswork.</p>
                                     </div>
                                 </div>
                                 
                                 <div class="flex gap-4">
-                                    <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-calendar text-gold"></i>
+                                    <div class="w-12 h-12 rounded-xl bg-light-yellow flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-calendar text-green"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-slate-900 dark:text-white mb-1">Monthly Updates</p>
-                                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Formulations evolve with your progress. Healing accelerates as coherence builds.</p>
+                                        <p class="font-semibold text-slate-900 mb-1">Monthly Updates</p>
+                                        <p class="text-xs text-slate-600 leading-relaxed">Formulations evolve with your progress. Healing accelerates as coherence builds.</p>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="pt-6 border-t border-white/20 dark:border-white/10">
-                                <p class="text-xs text-slate-500 dark:text-slate-400 italic">
+                            <div class="pt-6 border-t border-slate-200">
+                                <p class="text-xs text-slate-600 italic">
                                     *Results vary. Not guaranteed. Individual outcomes depend on commitment and body response.
                                 </p>
                             </div>
@@ -276,13 +273,13 @@
                     </div>
                     
                     <!-- As Featured In Strip -->
-                    <div class="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
-                        <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Featured In</p>
+                    <div class="mt-8 pt-8 border-t border-slate-200">
+                        <p class="text-xs font-semibold text-slate-600 uppercase tracking-widest mb-4">Featured In</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">USA Today</span>
-                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">Science Times</span>
-                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">People Magazine</span>
-                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300">PharmTech</span>
+                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">USA Today</span>
+                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">Science Times</span>
+                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">People Magazine</span>
+                            <span class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">PharmTech</span>
                         </div>
                     </div>
                 </div>
@@ -298,10 +295,10 @@
             <div class="grid lg:grid-cols-3 gap-12 mb-16">
                 <!-- Left: Headline -->
                 <div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
                         Scientific, Spiritual & Clinical Proof
                     </h2>
-                    <p class="text-base text-slate-600 dark:text-slate-400">
+                    <p class="text-base text-slate-600">
                         Where Medicine Ends, Real Healing Begins.
                     </p>
                 </div>
@@ -309,33 +306,33 @@
                 <!-- Right: Featured & Trusted -->
                 <div class="lg:col-span-2 space-y-8">
                     <div>
-                        <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Featured In</p>
+                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4">Featured In</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300">USA Today</span>
-                            <span class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300">Science Times</span>
-                            <span class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300">People Magazine</span>
-                            <span class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300">Alternative Medicine</span>
-                            <span class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300">PharmTech</span>
-                            <span class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300">DigitalJournal Top 10</span>
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-medium text-slate-700">USA Today</span>
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-medium text-slate-700">Science Times</span>
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-medium text-slate-700">People Magazine</span>
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-medium text-slate-700">Alternative Medicine</span>
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-medium text-slate-700">PharmTech</span>
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-medium text-slate-700">DigitalJournal Top 10</span>
                         </div>
                     </div>
                     
                     <div class="divider-gradient"></div>
                     
                     <div>
-                        <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Trusted By</p>
+                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4">Trusted By</p>
                         <div class="grid sm:grid-cols-2 gap-3">
-                            <div class="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                                <i class="fas fa-shield text-gold text-sm"></i> Health Experts Alliance
+                            <div class="px-4 py-3 rounded-xl bg-slate-100 text-xs font-medium text-slate-700 flex items-center gap-2">
+                                <i class="fas fa-shield text-green text-sm"></i> Health Experts Alliance
                             </div>
-                            <div class="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                                <i class="fas fa-brain text-gold text-sm"></i> Brain Vision Institute
+                            <div class="px-4 py-3 rounded-xl bg-slate-100 text-xs font-medium text-slate-700 flex items-center gap-2">
+                                <i class="fas fa-brain text-green text-sm"></i> Brain Vision Institute
                             </div>
-                            <div class="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                                <i class="fas fa-eye text-gold text-sm"></i> Advanced Eyecare
+                            <div class="px-4 py-3 rounded-xl bg-slate-100 text-xs font-medium text-slate-700 flex items-center gap-2">
+                                <i class="fas fa-eye text-green text-sm"></i> Advanced Eyecare
                             </div>
-                            <div class="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                                <i class="fas fa-leaf text-gold text-sm"></i> Restorative Medicine
+                            <div class="px-4 py-3 rounded-xl bg-slate-100 text-xs font-medium text-slate-700 flex items-center gap-2">
+                                <i class="fas fa-leaf text-green text-sm"></i> Restorative Medicine
                             </div>
                         </div>
                     </div>
@@ -347,17 +344,17 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass-card rounded-2xl p-8 border-l-2 border-l-gold">
-                    <p class="text-base italic text-slate-700 dark:text-slate-300 mb-4">
+                    <p class="text-base italic text-slate-700 mb-4">
                         "This is the only time I've seen natural remedies reverse wet macular degeneration."
                     </p>
-                    <p class="text-sm font-semibold text-slate-900 dark:text-white">Harvard-trained Retinologist</p>
+                    <p class="text-sm font-semibold text-slate-900">Harvard-trained Retinologist</p>
                 </div>
                 
                 <div class="glass-card rounded-2xl p-8 border-l-2 border-l-gold">
-                    <p class="text-base italic text-slate-700 dark:text-slate-300 mb-4">
+                    <p class="text-base italic text-slate-700 mb-4">
                         "Functional vision recovery, lens clarity, and glaucoma reversal—documented in clinical practice."
                     </p>
-                    <p class="text-sm font-semibold text-slate-900 dark:text-white">Dr. Todd Wylie, OD, FCOVD</p>
+                    <p class="text-sm font-semibold text-slate-900">Dr. Todd Wylie, OD, FCOVD</p>
                 </div>
             </div>
         </div>
@@ -371,7 +368,7 @@
             <div class="grid lg:grid-cols-3 gap-12 items-start mb-16">
                 <!-- Left: Headline -->
                 <div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
                         The Numbers Behind the Breakthrough
                     </h2>
                 </div>
@@ -380,38 +377,38 @@
                 <div class="lg:col-span-2">
                     <div class="grid sm:grid-cols-2 gap-8 mb-12">
                         <div class="space-y-3">
-                            <div class="text-5xl font-bold text-gold">12×</div>
-                            <p class="text-sm font-semibold text-slate-900 dark:text-white">Faster Healing</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Prognosis of blindness reversed. 36 years of biological aging in 36 months.</p>
-                            <p class="text-xs italic text-slate-500 dark:text-slate-500 mt-3">Results vary, not guaranteed</p>
+                            <div class="text-5xl font-bold text-green">12×</div>
+                            <p class="text-sm font-semibold text-slate-900">Faster Healing</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Prognosis of blindness reversed. 36 years of biological aging in 36 months.</p>
+                            <p class="text-xs italic text-slate-500 mt-3">Results vary, not guaranteed</p>
                         </div>
                         
                         <div class="space-y-3">
-                            <div class="text-5xl font-bold text-gold">40+</div>
-                            <p class="text-sm font-semibold text-slate-900 dark:text-white">Years Developing</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Testing methods across thousands of clients. Refined protocols. Documented results.</p>
+                            <div class="text-5xl font-bold text-green">40+</div>
+                            <p class="text-sm font-semibold text-slate-900">Years Developing</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Testing methods across thousands of clients. Refined protocols. Documented results.</p>
                         </div>
                         
                         <div class="space-y-3">
-                            <div class="text-5xl font-bold text-gold">150+</div>
-                            <p class="text-sm font-semibold text-slate-900 dark:text-white">Formulations</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Handcrafted, targeted remedies guided by Biofield Analysis. Precision medicine.</p>
+                            <div class="text-5xl font-bold text-green">150+</div>
+                            <p class="text-sm font-semibold text-slate-900">Formulations</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Handcrafted, targeted remedies guided by Biofield Analysis. Precision medicine.</p>
                         </div>
                         
                         <div class="space-y-3">
-                            <div class="text-5xl font-bold text-gold">100%</div>
-                            <p class="text-sm font-semibold text-slate-900 dark:text-white">Personalized</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Real-time customization guided by bioenergetic data. No guesswork.</p>
+                            <div class="text-5xl font-bold text-green">100%</div>
+                            <p class="text-sm font-semibold text-slate-900">Personalized</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Real-time customization guided by bioenergetic data. No guesswork.</p>
                         </div>
                     </div>
                     
                     <!-- Why This Matters -->
                     <div class="glass-card rounded-2xl p-6 sm:p-8 border-l-2 border-l-gold">
-                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">Why This Matters</h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                        <h4 class="text-lg font-semibold text-slate-900 mb-3">Why This Matters</h4>
+                        <p class="text-sm text-slate-700 leading-relaxed mb-4">
                             Symptoms are effects. Suppressing them pushes the causes deeper. True healing supplies what's missing—right materials, energies, and information—clearing layers of incomplete healing that decades of conventional care may have overlooked.
                         </p>
-                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:gap-3 transition-all">
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 hover:gap-3 transition-all">
                             Learn the Truth About "Symptoms" <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -428,83 +425,83 @@
             <div class="grid lg:grid-cols-3 gap-12 items-start">
                 <!-- Left: Editorial Copy -->
                 <div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-6">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-6">
                         You Can Undo Years, Even Decades of Damage.
                     </h2>
-                    <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+                    <p class="text-base text-slate-600 leading-relaxed mb-8">
                         When your body's coherence is restored, healing happens at speeds that conventional medicine says are impossible. The outcomes speak for themselves.
                     </p>
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex gap-3 text-sm">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300"><strong>Eye conditions</strong> reversed—macular degeneration, glaucoma, cataracts, vision restoration</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700"><strong>Eye conditions</strong> reversed—macular degeneration, glaucoma, cataracts, vision restoration</span>
                         </li>
                         <li class="flex gap-3 text-sm">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300"><strong>Brain fog and cognitive decline</strong> clear—clarity and memory restored</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700"><strong>Brain fog and cognitive decline</strong> clear—clarity and memory restored</span>
                         </li>
                         <li class="flex gap-3 text-sm">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300"><strong>Vitality and circulation</strong> rebound—energy, endurance, and physical function return</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700"><strong>Vitality and circulation</strong> rebound—energy, endurance, and physical function return</span>
                         </li>
                         <li class="flex gap-3 text-sm">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300"><strong>Relief when diagnostics miss patterns</strong>—solutions when conventional care fails</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700"><strong>Relief when diagnostics miss patterns</strong>—solutions when conventional care fails</span>
                         </li>
                         <li class="flex gap-3 text-sm">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300"><strong>Home-guided implementation</strong>—precision formulas updated monthly by your Biofield data</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700"><strong>Home-guided implementation</strong>—precision formulas updated monthly by your Biofield data</span>
                         </li>
                     </ul>
                     
-                    <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-8 py-3 w-full flex items-center justify-center">
+                    <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 from-green to-green/90 text-white text-slate-900 px-8 py-3 w-full flex items-center justify-center">
                         See What Your Body Can Do <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                 </div>
                 
                 <!-- Right: Outcome Cards -->
                 <div class="lg:col-span-2 space-y-4">
-                    <div class="glass-card rounded-2xl p-6 border-t border-gold/30">
+                    <div class="glass-card rounded-2xl p-6 border-t-2 border-t-blue-400/40 bg-gradient-to-br from-white via-blue-50/30 to-white shadow-md hover:shadow-lg transition-all duration-300">
                         <div class="flex gap-4 mb-3">
-                            <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-eye text-blue-600 dark:text-blue-300"></i>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                                <i class="fas fa-eye text-white"></i>
                             </div>
-                            <h4 class="text-base font-semibold text-slate-900 dark:text-white flex items-center">Vision Restoration</h4>
+                            <h4 class="text-base font-semibold text-slate-900 flex items-center">Vision Restoration</h4>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed">
                             From confirmed blindness to functional vision. Retinal healing. Scar tissue reduction. Driver's license regained.
                         </p>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-6 border-t border-gold/30">
+                    <div class="glass-card rounded-2xl p-6 border-t-2 border-t-green-500/40 bg-gradient-to-br from-white via-green-50/30 to-white shadow-md hover:shadow-lg transition-all duration-300">
                         <div class="flex gap-4 mb-3">
-                            <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-brain text-green-600 dark:text-green-300"></i>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 via-green-600 to-green-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                                <i class="fas fa-brain text-white"></i>
                             </div>
-                            <h4 class="text-base font-semibold text-slate-900 dark:text-white flex items-center">Cognitive Revival</h4>
+                            <h4 class="text-base font-semibold text-slate-900 flex items-center">Cognitive Revival</h4>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed">
                             Brain fog dissolves. Memory sharpens. Mental clarity returns. Cognitive function restored at cellular level.
                         </p>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-6 border-t border-gold/30">
+                    <div class="glass-card rounded-2xl p-6 border-t-2 border-t-purple-400/40 bg-gradient-to-br from-white via-purple-50/30 to-white shadow-md hover:shadow-lg transition-all duration-300">
                         <div class="flex gap-4 mb-3">
-                            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-heart text-purple-600 dark:text-purple-300"></i>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                                <i class="fas fa-heart text-white"></i>
                             </div>
-                            <h4 class="text-base font-semibold text-slate-900 dark:text-white flex items-center">Vitality Return</h4>
+                            <h4 class="text-base font-semibold text-slate-900 flex items-center">Vitality Return</h4>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed">
                             Energy rebounds. Heart rhythm normalizes. Circulation improves. Physical capacity and endurance return.
                         </p>
                     </div>
                     
                     <!-- The Transformation Highlight -->
-                    <div class="glass-card rounded-2xl p-6 border-2 border-gold/50 bg-gradient-to-br from-gold/10 to-transparent">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-2">THE TRANSFORMATION</p>
-                        <p class="text-base text-slate-700 dark:text-slate-300">
+                    <div class="glass-card rounded-2xl p-6 border-2 border-green/50 bg-gradient-to-br from-green/10 to-transparent">
+                        <p class="text-sm font-semibold text-slate-900 mb-2">THE TRANSFORMATION</p>
+                        <p class="text-base text-slate-700">
                             Up to <strong>one year of functional gains every 30 days</strong> when coherence is sustained and remedies updated monthly.
                         </p>
                     </div>
@@ -519,10 +516,10 @@
     <section id="stories" class="py-16 sm:py-20 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
                     Documented Transformations
                 </h2>
-                <p class="text-base text-slate-600 dark:text-slate-400">Clinical case studies and verified client stories</p>
+                <p class="text-base text-slate-600">Clinical case studies and verified client stories</p>
             </div>
             
             <!-- Case Study Grid -->
@@ -530,147 +527,151 @@
                 <!-- Story 1 -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold">Verified</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400">Vision Reversal</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-green text-white text-xs font-bold uppercase tracking-wide shadow-sm border border-green/20 flex items-center gap-1.5">
+                            <i class="fas fa-check-circle text-xs"></i> Verified
+                        </span>
+                        <span class="text-xs text-slate-500">Vision Reversal</span>
                     </div>
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Blindness Reversed, Vision Restored</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">80-year-old with confirmed wet macular degeneration</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Retinal bleeding stopped</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Scar tissue reduced</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Functional vision returned</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Passed driver's test</li>
+                    <h4 class="text-lg font-semibold text-slate-900 mb-2">Blindness Reversed, Vision Restored</h4>
+                    <p class="text-xs text-slate-600 mb-4">80-year-old with confirmed wet macular degeneration</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Retinal bleeding stopped</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Scar tissue reduced</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Functional vision returned</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Passed driver's test</li>
                     </ul>
-                    <p class="text-xs italic text-slate-500 dark:text-slate-400">Timeline: 6–12 months</p>
+                    <p class="text-xs italic text-slate-500">Timeline: 6–12 months</p>
                 </div>
                 
                 <!-- Story 2 -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold">Verified</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400">Fast Recovery</span>
+                        <span class="px-2 py-1 rounded-lg bg-green/20 text-xs font-semibold text-green">Verified</span>
+                        <span class="text-xs text-slate-500">Fast Recovery</span>
                     </div>
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Driver's License Restored in 30 Days</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">86-year-old glaucoma reversal</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Eye pressure normalized</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Vision clarity improved</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Medications discontinued</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> License restored</li>
+                    <h4 class="text-lg font-semibold text-slate-900 mb-2">Driver's License Restored in 30 Days</h4>
+                    <p class="text-xs text-slate-600 mb-4">86-year-old glaucoma reversal</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Eye pressure normalized</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Vision clarity improved</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Medications discontinued</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> License restored</li>
                     </ul>
-                    <p class="text-xs italic text-slate-500 dark:text-slate-400">Timeline: 30 days</p>
+                    <p class="text-xs italic text-slate-500">Timeline: 30 days</p>
                 </div>
                 
                 <!-- Story 3 -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold">Verified</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400">Cardiac Reset</span>
+                        <span class="px-2 py-1 rounded-lg bg-green/20 text-xs font-semibold text-green">Verified</span>
+                        <span class="text-xs text-slate-500">Cardiac Reset</span>
                     </div>
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Heart Rhythm Normalized in 30 Days</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">Chronic arrhythmia case</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Heartbeat normalized</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Energy returned</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Work capacity restored</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Medications reduced</li>
+                    <h4 class="text-lg font-semibold text-slate-900 mb-2">Heart Rhythm Normalized in 30 Days</h4>
+                    <p class="text-xs text-slate-600 mb-4">Chronic arrhythmia case</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Heartbeat normalized</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Energy returned</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Work capacity restored</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Medications reduced</li>
                     </ul>
-                    <p class="text-xs italic text-slate-500 dark:text-slate-400">Timeline: 1 month</p>
+                    <p class="text-xs italic text-slate-500">Timeline: 1 month</p>
                 </div>
                 
                 <!-- Story 4 -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold">Verified</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400">Remission</span>
+                        <span class="px-2 py-1 rounded-lg bg-green/20 text-xs font-semibold text-green">Verified</span>
+                        <span class="text-xs text-slate-500">Remission</span>
                     </div>
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Cancer Remission in 3 Months</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">Leukemia survivor</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Coherence restored</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Immune optimized</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Clinical remission</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Full vitality return</li>
+                    <h4 class="text-lg font-semibold text-slate-900 mb-2">Cancer Remission in 3 Months</h4>
+                    <p class="text-xs text-slate-600 mb-4">Leukemia survivor</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Coherence restored</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Immune optimized</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Clinical remission</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Full vitality return</li>
                     </ul>
-                    <p class="text-xs italic text-slate-500 dark:text-slate-400">Timeline: 3 months</p>
+                    <p class="text-xs italic text-slate-500">Timeline: 3 months</p>
                 </div>
                 
                 <!-- Story 5 -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold">Verified</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400">Quantum Healing</span>
+                        <span class="px-2 py-1 rounded-lg bg-green/20 text-xs font-semibold text-green">Verified</span>
+                        <span class="text-xs text-slate-500">Quantum Healing</span>
                     </div>
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Transgenerational Healing</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">Family pattern dissolution</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Ancestral trauma cleared</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Patterns reversed</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Family coherence restored</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Health improvements extend</li>
+                    <h4 class="text-lg font-semibold text-slate-900 mb-2">Transgenerational Healing</h4>
+                    <p class="text-xs text-slate-600 mb-4">Family pattern dissolution</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Ancestral trauma cleared</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Patterns reversed</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Family coherence restored</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Health improvements extend</li>
                     </ul>
-                    <p class="text-xs italic text-slate-500 dark:text-slate-400">Timeline: Ongoing</p>
+                    <p class="text-xs italic text-slate-500">Timeline: Ongoing</p>
                 </div>
                 
                 <!-- Story 6: Placebo-Proof -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col border-2 border-gold/30">
+                <div class="glass-card rounded-2xl p-6 flex flex-col border-2 border-green/30">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold">Placebo-Proof</span>
-                        <span class="text-xs text-slate-500 dark:text-slate-400">Animal Healing</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-green text-white text-xs font-bold uppercase tracking-wide shadow-sm border border-green/20 flex items-center gap-1.5">
+                            <i class="fas fa-shield-alt text-xs"></i> Placebo-Proof
+                        </span>
+                        <span class="text-xs text-slate-500">Animal Healing</span>
                     </div>
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Clover the Cow: Eye Tumor Healed</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">10-month full recovery</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Tumor size reduced</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Vision restored</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> No placebo possible</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Vet-verified outcome</li>
+                    <h4 class="text-lg font-semibold text-slate-900 mb-2">Clover the Cow: Eye Tumor Healed</h4>
+                    <p class="text-xs text-slate-600 mb-4">10-month full recovery</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Tumor size reduced</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Vision restored</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> No placebo possible</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Vet-verified outcome</li>
                     </ul>
-                    <p class="text-xs italic text-slate-500 dark:text-slate-400">Timeline: 10 months</p>
+                    <p class="text-xs italic text-slate-500">Timeline: 10 months</p>
                 </div>
             </div>
             
             <!-- Professional Endorsements -->
             <div class="glass-card rounded-2xl p-8 mb-12">
-                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-8">Professional Endorsements & High-Profile Cases</h3>
+                <h3 class="text-xl font-semibold text-slate-900 mb-8">Professional Endorsements & High-Profile Cases</h3>
                 <div class="grid sm:grid-cols-2 gap-6">
                     <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-crown text-gold text-sm"></i>
+                        <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-crown text-green text-sm"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm">Prince Kawananakoa</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">Eye pressure lowered. Vision clarity improved.</p>
+                            <p class="font-semibold text-slate-900 text-sm">Prince Kawananakoa</p>
+                            <p class="text-xs text-slate-600">Eye pressure lowered. Vision clarity improved.</p>
                         </div>
                     </div>
                     
                     <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-music text-gold text-sm"></i>
+                        <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-music text-green text-sm"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm">Olivia Newton-John</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">Meridian testing confirmed healing across systems.</p>
+                            <p class="font-semibold text-slate-900 text-sm">Olivia Newton-John</p>
+                            <p class="text-xs text-slate-600">Meridian testing confirmed healing across systems.</p>
                         </div>
                     </div>
                     
                     <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-stethoscope text-gold text-sm"></i>
+                        <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-stethoscope text-green text-sm"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm">Dr. Todd Wylie, OD, FCOVD</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">Functional vision recovery & glaucoma reversal documented.</p>
+                            <p class="font-semibold text-slate-900 text-sm">Dr. Todd Wylie, OD, FCOVD</p>
+                            <p class="text-xs text-slate-600">Functional vision recovery & glaucoma reversal documented.</p>
                         </div>
                     </div>
                     
                     <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-graduation-cap text-gold text-sm"></i>
+                        <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-green text-sm"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-slate-900 dark:text-white text-sm">Campbell Scott</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">"Glaucoma help. Pressure normalized. Highly recommend."</p>
+                            <p class="font-semibold text-slate-900 text-sm">Campbell Scott</p>
+                            <p class="text-xs text-slate-600">"Glaucoma help. Pressure normalized. Highly recommend."</p>
                         </div>
                     </div>
                 </div>
@@ -678,10 +679,10 @@
             
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-8 py-3 flex items-center justify-center">
+                <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 from-green to-green/90 text-white text-slate-900 px-8 py-3 flex items-center justify-center">
                     See More Stories <i class="fas fa-arrow-right ml-2"></i>
                 </button>
-                <button class="btn-premium border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-900 px-8 py-3 flex items-center justify-center">
+                <button class="btn-premium border border-slate-300 text-slate-900 hover:bg-slate-50 px-8 py-3 flex items-center justify-center">
                     Start Healing Journey <i class="fas fa-arrow-right ml-2"></i>
                 </button>
             </div>
@@ -690,91 +691,389 @@
 
     <div class="divider-gradient max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-20 lg:my-24"></div>
 
-    <!-- ===== SECTION 6: COMPARISON TABLE ===== -->
-    <section class="py-16 sm:py-20 lg:py-24">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
+    <!-- ===== SECTION 6: PREMIUM COMPARISON MARQUEE ===== -->
+    <section class="py-20 sm:py-28 lg:py-32 relative overflow-hidden">
+        <!-- Background with subtle gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-light-yellow/10 to-white"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green/5 via-transparent to-transparent"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-block mb-6">
+                    <div class="h-1 w-24 bg-gradient-to-r from-transparent via-green to-transparent mx-auto"></div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                     The Difference
                 </h2>
-                <p class="text-base text-slate-600 dark:text-slate-400">From frustration to breakthrough</p>
+                <p class="text-lg sm:text-xl text-slate-600 font-medium">From frustration to breakthrough</p>
             </div>
             
-            <!-- Comparison Grid -->
-            <div class="space-y-3 mb-12">
-                <!-- Row 1 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 flex items-center justify-between gap-8">
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">❌ Told it's "irreversible"</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Medicine says "nothing can be done."</p>
-                    </div>
-                    <div class="hidden sm:block w-px h-16 bg-slate-200 dark:bg-slate-700"></div>
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">✅ 40+ years proving it's reversible</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Documented cases. Biological aging reversed.</p>
-                    </div>
-                </div>
+            <!-- Premium Marquee Container -->
+            <div class="relative overflow-hidden rounded-[2.5rem] bg-white/80 backdrop-blur-xl shadow-[0_25px_100px_-12px_rgba(0,0,0,0.15)] border border-slate-200/80">
+                <!-- Enhanced fade gradients on edges -->
+                <div class="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white via-white/95 to-transparent z-20 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white via-white/95 to-transparent z-20 pointer-events-none"></div>
                 
-                <!-- Row 2 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 flex items-center justify-between gap-8">
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">❌ Symptoms suppressed</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Drugs mask effects. Causes pushed deeper.</p>
+                <!-- Marquee Track -->
+                <div class="marquee-track flex gap-8 py-12 px-12" style="animation: marquee 80s linear infinite;">
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="marquee-content flex gap-8 flex-shrink-0">
+                        <!-- Comparison Card 1 -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Told it's "irreversible"</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Medicine says "nothing can be done." Prognosis of permanent damage, loss, decline.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">40+ years proving it's reversible</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Documented cases of "irreversible" conditions reversed. Biological aging reversed.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comparison Card 2 -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Symptoms suppressed</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Drugs mask effects. Causes pushed deeper. Band-aids on the real problem.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Symptoms as healing signals</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Your body is talking. We listen. Supply what's missing, healing follows.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comparison Card 3 -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Treatments cause damage</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Side effects, dependencies, new problems. Toxins accumulate. Coherence drops.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Natural materials & energies</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Handcrafted formulations from nature. Biofield harmonization. Support healing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comparison Card 4 -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Generic protocols</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">One-size-fits-all treatments. Your uniqueness ignored. Mediocre results.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Biofield Analysis precision</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">10-second voice scan. 150+ formulations matched to YOUR body's specific needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comparison Card 5 -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Supplement cabinet chaos</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Dozens of pills. Guessing. Expensive. No coherence. No guidance.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Targeted, concentrated formulations</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">2–5 precise remedies. Monthly updates. No guesswork. Coherence-driven.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comparison Card 6 -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Years lost</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Slow protocols. Plateau. Frustration. Vision, mobility, life quality fade.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Accelerated healing: 12× faster</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Up to one year of functional gains every 30 days. Months of progress in weeks.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hidden sm:block w-px h-16 bg-slate-200 dark:bg-slate-700"></div>
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">✅ Symptoms as healing signals</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Body is talking. Supply what's missing.</p>
-                    </div>
-                </div>
-                
-                <!-- Row 3 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 flex items-center justify-between gap-8">
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">❌ Treatments cause damage</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Side effects. Dependencies. Toxins accumulate.</p>
-                    </div>
-                    <div class="hidden sm:block w-px h-16 bg-slate-200 dark:bg-slate-700"></div>
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">✅ Natural materials & energies</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Support healing, don't suppress it.</p>
-                    </div>
-                </div>
-                
-                <!-- Row 4 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 flex items-center justify-between gap-8">
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">❌ Generic protocols</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">One-size-fits-all. Your uniqueness ignored.</p>
-                    </div>
-                    <div class="hidden sm:block w-px h-16 bg-slate-200 dark:bg-slate-700"></div>
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">✅ Biofield Analysis precision</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">150+ formulations matched to YOUR needs.</p>
-                    </div>
-                </div>
-                
-                <!-- Row 5 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 flex items-center justify-between gap-8">
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">❌ Years lost</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Slow protocols. Plateau. Frustration.</p>
-                    </div>
-                    <div class="hidden sm:block w-px h-16 bg-slate-200 dark:bg-slate-700"></div>
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-1">✅ Accelerated healing: 12× faster</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Months of progress in weeks.</p>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="marquee-content flex gap-8 flex-shrink-0" aria-hidden="true">
+                        <!-- Same cards repeated -->
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Told it's "irreversible"</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Medicine says "nothing can be done." Prognosis of permanent damage, loss, decline.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">40+ years proving it's reversible</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Documented cases of "irreversible" conditions reversed. Biological aging reversed.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Symptoms suppressed</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Drugs mask effects. Causes pushed deeper. Band-aids on the real problem.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Symptoms as healing signals</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Your body is talking. We listen. Supply what's missing, healing follows.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Treatments cause damage</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Side effects, dependencies, new problems. Toxins accumulate. Coherence drops.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Natural materials & energies</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Handcrafted formulations from nature. Biofield harmonization. Support healing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Generic protocols</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">One-size-fits-all treatments. Your uniqueness ignored. Mediocre results.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Biofield Analysis precision</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">10-second voice scan. 150+ formulations matched to YOUR body's specific needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Supplement cabinet chaos</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Dozens of pills. Guessing. Expensive. No coherence. No guidance.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Targeted, concentrated formulations</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">2–5 precise remedies. Monthly updates. No guesswork. Coherence-driven.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-[720px] rounded-3xl bg-white p-10 border border-slate-200/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(33,71,45,0.15)] transition-all duration-500 group">
+                            <div class="flex items-start justify-between gap-10">
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-red-50 to-red-100/50 border border-red-200/60 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                            <i class="fas fa-times text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Common Frustrations</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 leading-tight">Years lost</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Slow protocols. Plateau. Frustration. Vision, mobility, life quality fade.</p>
+                                </div>
+                                <div class="w-px h-28 bg-gradient-to-b from-transparent via-slate-300 to-transparent"></div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-green/10 to-green/5 border border-green/30 shadow-sm">
+                                        <div class="w-6 h-6 rounded-full bg-green flex items-center justify-center shadow-md">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-green uppercase tracking-wider">Dr. Glen's Paradigm</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-green leading-tight">Accelerated healing: 12× faster</h3>
+                                    <p class="text-base text-slate-600 leading-relaxed">Up to one year of functional gains every 30 days. Months of progress in weeks.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- CTA -->
-            <div class="text-center">
-                <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-8 py-3 inline-flex items-center">
+            <div class="text-center mt-12">
+                <button class="btn-premium bg-gradient-to-r from-green to-green/90 text-white px-8 py-3 inline-flex items-center shadow-lg hover:shadow-xl">
                     Turn Frustration Into Breakthrough <i class="fas fa-arrow-right ml-2"></i>
                 </button>
             </div>
         </div>
+        
+        <style>
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            
+            .marquee-track {
+                display: flex;
+                width: fit-content;
+                will-change: transform;
+            }
+            
+            .marquee-track:hover {
+                animation-play-state: paused;
+            }
+            
+            .marquee-content > div {
+                transition: transform 0.3s ease-out;
+            }
+            
+            .marquee-content > div:hover {
+                transform: translateY(-4px);
+            }
+        </style>
     </section>
 
     <div class="divider-gradient max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-20 lg:my-24"></div>
@@ -783,110 +1082,110 @@
     <section id="programs" class="py-16 sm:py-20 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
                     Pathways to Healing
                 </h2>
-                <p class="text-base text-slate-600 dark:text-slate-400">Choose the program that matches your needs</p>
+                <p class="text-base text-slate-600">Choose the program that matches your needs</p>
             </div>
             
             <!-- Programs Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
                 <!-- Program 1: Free Scan -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
-                    <span class="text-xs font-semibold text-gold mb-3">GET STARTED</span>
-                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Free Scan</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-6">10-second voice analysis. Epigenetic report. Remedy matches.</p>
-                    <div class="text-2xl font-bold text-gold mb-6">Free</div>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Voice-based analysis</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Epigenetic assessment</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Remedy recommendations</li>
+                    <span class="text-xs font-semibold text-green mb-3">GET STARTED</span>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Free Scan</h3>
+                    <p class="text-xs text-slate-600 mb-6">10-second voice analysis. Epigenetic report. Remedy matches.</p>
+                    <div class="text-2xl font-bold text-green mb-6">Free</div>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Voice-based analysis</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Epigenetic assessment</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Remedy recommendations</li>
                     </ul>
-                    <button class="btn-premium bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-800 px-4 py-2.5 w-full text-sm">
+                    <button class="btn-premium bg-slate-100 text-slate-900 hover:bg-slate-200 hover:bg-slate-200 px-4 py-2.5 w-full text-sm">
                         Get Your Free Scan
                     </button>
                 </div>
                 
                 <!-- Program 2: Accelerated Self Healing (Most Popular) -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col border-2 border-gold lg:col-span-2 lg:scale-105">
-                    <span class="px-2 py-1 rounded-lg bg-gold/20 text-xs font-semibold text-gold w-fit mb-3">MOST POPULAR</span>
-                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Accelerated Self Healing</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-6">Custom program. Professional consultation. Ongoing support.</p>
-                    <div class="text-3xl font-bold text-gold mb-1">$997</div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">One-time investment</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-8 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Initial biofield analysis</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Custom protocol design</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Personalized formulations</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Monthly updates</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Email support</li>
+                <div class="glass-card rounded-2xl p-6 flex flex-col border-2 border-green lg:col-span-2 lg:scale-105">
+                    <span class="px-2 py-1 rounded-lg bg-green/20 text-xs font-semibold text-green w-fit mb-3">MOST POPULAR</span>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Accelerated Self Healing</h3>
+                    <p class="text-xs text-slate-600 mb-6">Custom program. Professional consultation. Ongoing support.</p>
+                    <div class="text-3xl font-bold text-green mb-1">$997</div>
+                    <p class="text-xs text-slate-500 mb-6">One-time investment</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-8 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Initial biofield analysis</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Custom protocol design</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Personalized formulations</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Monthly updates</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Email support</li>
                     </ul>
-                    <button class="btn-premium bg-gold text-slate-900 hover:bg-gold/90 px-4 py-3 w-full text-sm font-semibold">
+                    <button class="btn-premium bg-green text-white hover:bg-green/90 px-4 py-3 w-full text-sm font-semibold">
                         Design My Program
                     </button>
                 </div>
                 
                 <!-- Program 3: Certification -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
-                    <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">PROFESSIONAL</span>
-                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Certification</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-6">12-week program. 24 live sessions. Launch your practice.</p>
-                    <div class="text-2xl font-bold text-gold mb-1">$2,997</div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">12-week access</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> 24 live training sessions</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Protocol mastery</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Certification credential</li>
+                    <span class="text-xs font-semibold text-slate-500 mb-3">PROFESSIONAL</span>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Certification</h3>
+                    <p class="text-xs text-slate-600 mb-6">12-week program. 24 live sessions. Launch your practice.</p>
+                    <div class="text-2xl font-bold text-green mb-1">$2,997</div>
+                    <p class="text-xs text-slate-500 mb-6">12-week access</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> 24 live training sessions</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Protocol mastery</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Certification credential</li>
                     </ul>
-                    <button class="btn-premium bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-800 px-4 py-2.5 w-full text-sm">
+                    <button class="btn-premium bg-slate-100 text-slate-900 hover:bg-slate-200 hover:bg-slate-200 px-4 py-2.5 w-full text-sm">
                         Join Certification
                     </button>
                 </div>
                 
                 <!-- Program 4: Transgenerational EVOX -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col">
-                    <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">ADVANCED</span>
-                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">EVOX Reframing</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-6">Clear generational patterns. Non-local quantum healing. Remote.</p>
-                    <div class="text-2xl font-bold text-gold mb-1">$1,997</div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Includes equipment</p>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 mb-6 flex-grow">
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> ZYTO cradle included</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Up to 10 sessions</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0"></i> Remote access</li>
+                    <span class="text-xs font-semibold text-slate-500 mb-3">ADVANCED</span>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">EVOX Reframing</h3>
+                    <p class="text-xs text-slate-600 mb-6">Clear generational patterns. Non-local quantum healing. Remote.</p>
+                    <div class="text-2xl font-bold text-green mb-1">$1,997</div>
+                    <p class="text-xs text-slate-500 mb-6">Includes equipment</p>
+                    <ul class="space-y-2 text-xs text-slate-700 mb-6 flex-grow">
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> ZYTO cradle included</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Up to 10 sessions</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0"></i> Remote access</li>
                     </ul>
-                    <button class="btn-premium bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-800 px-4 py-2.5 w-full text-sm">
+                    <button class="btn-premium bg-slate-100 text-slate-900 hover:bg-slate-200 hover:bg-slate-200 px-4 py-2.5 w-full text-sm">
                         Clear Patterns
                     </button>
                 </div>
             </div>
             
             <!-- Program 5: Oasis (Full Width) -->
-            <div class="glass-card rounded-2xl p-8 sm:p-12 border-2 border-gold/50">
+            <div class="glass-card rounded-2xl p-8 sm:p-12 border-2 border-green/50">
                 <div class="grid lg:grid-cols-3 gap-8 items-center">
                     <div>
-                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-2">Wholistic Healing Oasis</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Complete transformation package</p>
-                        <ul class="space-y-3 text-xs text-slate-700 dark:text-slate-300">
-                            <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0 mt-0.5"></i> <span>Certification program included</span></li>
-                            <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0 mt-0.5"></i> <span>1 year ongoing support</span></li>
-                            <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0 mt-0.5"></i> <span>All tools and resources</span></li>
-                            <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0 mt-0.5"></i> <span>Direct access to Dr. Glen</span></li>
-                            <li class="flex gap-2"><i class="fas fa-check text-gold flex-shrink-0 mt-0.5"></i> <span>Quantum healing protocols</span></li>
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-2">Wholistic Healing Oasis</h3>
+                        <p class="text-sm text-slate-600 mb-6">Complete transformation package</p>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0 mt-0.5"></i> <span>Certification program included</span></li>
+                            <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0 mt-0.5"></i> <span>1 year ongoing support</span></li>
+                            <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0 mt-0.5"></i> <span>All tools and resources</span></li>
+                            <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0 mt-0.5"></i> <span>Direct access to Dr. Glen</span></li>
+                            <li class="flex gap-2"><i class="fas fa-check text-green flex-shrink-0 mt-0.5"></i> <span>Quantum healing protocols</span></li>
                         </ul>
                     </div>
-                    <div class="text-center lg:border-l lg:border-r border-slate-300 dark:border-slate-700 py-8 lg:py-0 lg:px-8">
-                        <div class="text-4xl font-bold text-gold mb-2">$14,997</div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Investment in your future</p>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">The complete pathway to mastery, transformation, and sustained healing.</p>
+                    <div class="text-center lg:border-l lg:border-r border-slate-300 py-8 lg:py-0 lg:px-8">
+                        <div class="text-4xl font-bold text-green mb-2">$14,997</div>
+                        <p class="text-xs text-slate-500 mb-6">Investment in your future</p>
+                        <p class="text-sm text-slate-600">The complete pathway to mastery, transformation, and sustained healing.</p>
                     </div>
                     <div class="text-center">
                         <div class="mb-6">
-                            <i class="fas fa-star text-gold text-4xl"></i>
-                            <p class="text-sm font-semibold text-slate-900 dark:text-white mt-3">Premium Experience</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">White-glove personalization</p>
+                            <i class="fas fa-star text-green text-4xl"></i>
+                            <p class="text-sm font-semibold text-slate-900 mt-3">Premium Experience</p>
+                            <p class="text-xs text-slate-600">White-glove personalization</p>
                         </div>
-                        <button class="btn-premium bg-gold text-slate-900 hover:bg-gold/90 px-6 py-3 w-full font-semibold">
+                        <button class="btn-premium bg-green text-white hover:bg-green/90 px-6 py-3 w-full font-semibold">
                             Explore the Oasis
                         </button>
                     </div>
@@ -895,28 +1194,28 @@
             
             <!-- What Happens Next -->
             <div class="mt-16 glass-card rounded-2xl p-8">
-                <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-8 text-center">What Happens Next</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mb-8 text-center">What Happens Next</h3>
                 <div class="grid sm:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <div class="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center mx-auto mb-4">
-                            <span class="text-gold font-bold">1</span>
+                        <div class="w-12 h-12 rounded-xl bg-light-yellow flex items-center justify-center mx-auto mb-4">
+                            <span class="text-green font-bold">1</span>
                         </div>
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-2">Take Voice Scan</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">10 seconds of your voice reveals epigenetic patterns.</p>
+                        <p class="text-sm font-semibold text-slate-900 mb-2">Take Voice Scan</p>
+                        <p class="text-xs text-slate-600">10 seconds of your voice reveals epigenetic patterns.</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center mx-auto mb-4">
-                            <span class="text-gold font-bold">2</span>
+                        <div class="w-12 h-12 rounded-xl bg-light-yellow flex items-center justify-center mx-auto mb-4">
+                            <span class="text-green font-bold">2</span>
                         </div>
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-2">Get Report & Insights</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Interactive analysis. Coherence assessment. Remedy matches.</p>
+                        <p class="text-sm font-semibold text-slate-900 mb-2">Get Report & Insights</p>
+                        <p class="text-xs text-slate-600">Interactive analysis. Coherence assessment. Remedy matches.</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center mx-auto mb-4">
-                            <span class="text-gold font-bold">3</span>
+                        <div class="w-12 h-12 rounded-xl bg-light-yellow flex items-center justify-center mx-auto mb-4">
+                            <span class="text-green font-bold">3</span>
                         </div>
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white mb-2">Receive Remedies & Updates</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Personalized formulas. Monthly adjustments. Monthly updates.</p>
+                        <p class="text-sm font-semibold text-slate-900 mb-2">Receive Remedies & Updates</p>
+                        <p class="text-xs text-slate-600">Personalized formulas. Monthly adjustments. Monthly updates.</p>
                     </div>
                 </div>
             </div>
@@ -930,42 +1229,42 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20 lg:space-y-24">
             <!-- Meet Dr. Glen -->
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="hidden lg:flex h-80 bg-gradient-to-br from-gold/10 to-slate-200/10 dark:to-white/5 rounded-2xl items-center justify-center">
-                    <i class="fas fa-user-circle text-6xl text-gold/40"></i>
+                <div class="hidden lg:flex h-80 bg-gradient-to-br from-green/10 to-slate-200/10 rounded-2xl items-center justify-center">
+                    <i class="fas fa-user-circle text-6xl text-green/40"></i>
                 </div>
                 <div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-6">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-6">
                         Meet Dr. Glen Swartwout
                     </h2>
                     <div class="glass-card rounded-2xl p-6 mb-8 border-l-2 border-l-gold">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white leading-relaxed">
+                        <p class="text-sm font-semibold text-slate-900 leading-relaxed">
                             At 25 told I'd be blind by 50.<br/>
                             At 30 told I'd be dead by 40.<br/>
                             Now 69 with full vision and vitality.
                         </p>
                     </div>
-                    <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                    <p class="text-base text-slate-700 leading-relaxed mb-6">
                         Dartmouth-trained medical doctor. Board-certified optometrist. Medical empath with 40+ years of clinical practice reversing conditions labeled "incurable."
                     </p>
                     <ul class="space-y-4 mb-8 text-sm">
                         <li class="flex gap-3">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300">Retina specialists say "never seen before" outcomes</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700">Retina specialists say "never seen before" outcomes</span>
                         </li>
                         <li class="flex gap-3">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300">150+ handcrafted formulations guided by biofield intelligence</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700">150+ handcrafted formulations guided by biofield intelligence</span>
                         </li>
                         <li class="flex gap-3">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300">Clinical theory merging quantum biology and body intelligence</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700">Clinical theory merging quantum biology and body intelligence</span>
                         </li>
                         <li class="flex gap-3">
-                            <i class="fas fa-check text-gold flex-shrink-0 mt-1"></i>
-                            <span class="text-slate-700 dark:text-slate-300">Thousands of clients from royalty to everyday seekers</span>
+                            <i class="fas fa-check text-green flex-shrink-0 mt-1"></i>
+                            <span class="text-slate-700">Thousands of clients from royalty to everyday seekers</span>
                         </li>
                     </ul>
-                    <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-8 py-3 inline-flex items-center">
+                    <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 from-green to-green/90 text-white text-slate-900 px-8 py-3 inline-flex items-center">
                         Work With Dr. Glen <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                 </div>
@@ -975,52 +1274,52 @@
             
             <!-- Origin Story -->
             <div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-8">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-8">
                     The Origin Story
                 </h2>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="glass-card rounded-2xl p-6">
-                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                            <i class="fas fa-flask text-gold"></i> The Diagnosis
+                        <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                            <i class="fas fa-flask text-green"></i> The Diagnosis
                         </h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <p class="text-sm text-slate-700 leading-relaxed">
                             At 25, ophthalmologists told me I'd be blind by 50. Secondary glaucoma. Retinal damage. The prognosis was final. I lost my identity, my career, my future in one clinical verdict.
                         </p>
                     </div>
                     
                     <div class="glass-card rounded-2xl p-6">
-                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                            <i class="fas fa-skull text-gold"></i> The Death Sentence
+                        <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                            <i class="fas fa-skull text-green"></i> The Death Sentence
                         </h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <p class="text-sm text-slate-700 leading-relaxed">
                             At 30, mercury poisoning from dental work was poisoning my nervous system. Prognosis: dead by 40. I cancelled my malpractice insurance. I prepared my family for my death.
                         </p>
                     </div>
                     
                     <div class="glass-card rounded-2xl p-6">
-                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                            <i class="fas fa-book text-gold"></i> The Research
+                        <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                            <i class="fas fa-book text-green"></i> The Research
                         </h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <p class="text-sm text-slate-700 leading-relaxed">
                             I had nothing to lose. I researched across every paradigm—quantum biology, functional medicine, syntonics, energetic healing, epigenetics. I found mentors who saw what conventional medicine missed: body intelligence.
                         </p>
                     </div>
                     
                     <div class="glass-card rounded-2xl p-6">
-                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                            <i class="fas fa-heart-pulse text-gold"></i> The Breakthrough
+                        <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                            <i class="fas fa-heart-pulse text-green"></i> The Breakthrough
                         </h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <p class="text-sm text-slate-700 leading-relaxed">
                             I applied one principle: supply what's missing. My glaucoma evaporated. The mercury left. My vision sharpened. The deadline passed. I lived. And from that lived experience, I developed methods that have helped thousands.
                         </p>
                     </div>
                 </div>
                 
                 <div class="glass-card rounded-2xl p-8 mt-8 text-center border-l-2 border-l-gold">
-                    <p class="text-base italic text-slate-700 dark:text-slate-300 mb-4">
+                    <p class="text-base italic text-slate-700 mb-4">
                         "Healing is time travel. It's the one thing that proves linear time is optional. Your body can undo what time did. That's the mystery I've spent 40 years solving."
                     </p>
-                    <p class="text-sm font-semibold text-slate-900 dark:text-white">— Dr. Glen Swartwout</p>
+                    <p class="text-sm font-semibold text-slate-900">— Dr. Glen Swartwout</p>
                 </div>
             </div>
             
@@ -1028,43 +1327,43 @@
             
             <!-- Mission & Vision -->
             <div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-8">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-8">
                     Mission & Vision
                 </h2>
                 <div class="grid md:grid-cols-2 gap-6 mb-8">
                     <div class="glass-card rounded-2xl p-8 border-t-2 border-t-blue-400">
-                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                            <i class="fas fa-target text-gold"></i> Our Mission
+                        <h4 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                            <i class="fas fa-target text-green"></i> Our Mission
                         </h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                        <p class="text-sm text-slate-700 leading-relaxed mb-4">
                             Restore humanity's relationship with its own innate intelligence. Prove that the body's wisdom surpasses pharmaceutical logic. Replace entropy with syntropy.
                         </p>
-                        <p class="text-xs italic text-slate-600 dark:text-slate-400">
+                        <p class="text-xs italic text-slate-600">
                             One person, one body, one paradigm shift at a time.
                         </p>
                     </div>
                     
                     <div class="glass-card rounded-2xl p-8 border-t-2 border-t-green-400">
-                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                            <i class="fas fa-eye text-gold"></i> Our Vision
+                        <h4 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                            <i class="fas fa-eye text-green"></i> Our Vision
                         </h4>
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                        <p class="text-sm text-slate-700 leading-relaxed mb-4">
                             A world where blindness and degeneration are avoidable. Where "irreversible" is outdated. Where every person knows their body is intelligent, communicative, and capable of healing.
                         </p>
-                        <p class="text-xs italic text-slate-600 dark:text-slate-400">
+                        <p class="text-xs italic text-slate-600">
                             Health without dogma. Healing without limits.
                         </p>
                     </div>
                 </div>
                 
                 <div class="glass-card rounded-2xl p-8 border-t-2 border-t-purple-400">
-                    <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                        <i class="fas fa-lightbulb text-gold"></i> The Big Why
+                    <h4 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fas fa-lightbulb text-green"></i> The Big Why
                     </h4>
-                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
                         Your body is more than chemicals. It's an intelligent, communicative, coherent system capable of things that our current medical model says are impossible. When you understand this—when you experience your own body's intelligence—everything changes.
                     </p>
-                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <p class="text-sm text-slate-700 leading-relaxed">
                         This is what I call <strong>"Minding Body"</strong>—the merger of consciousness and cellular intelligence that has the power to reverse decades of damage, restore lost function, and reclaim the future medicine says is lost.
                     </p>
                 </div>
@@ -1075,41 +1374,41 @@
     <div class="divider-gradient max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-20 lg:my-24"></div>
 
     <!-- ===== SECTION 9: LEAD MAGNET ===== -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-900 to-slate-950 dark:from-slate-900 dark:to-black text-white -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+    <section class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-green/10 via-slate-50 to-white -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-6">
                 See Where Your Body Is Struggling Right Now.
             </h2>
             
-            <p class="text-base sm:text-lg text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto">
+            <p class="text-base sm:text-lg text-slate-700 mb-12 leading-relaxed max-w-2xl mx-auto">
                 The Free Bioenergetic Wellness Scan is a 10-second voice analysis that reveals which systems are overworked, which patterns need healing, and which remedies would accelerate your coherence most efficiently.
             </p>
             
             <div class="grid sm:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
                 <div class="text-center">
-                    <i class="fas fa-microphone text-gold text-3xl mb-3"></i>
+                    <i class="fas fa-microphone text-green text-3xl mb-3"></i>
                     <p class="text-sm font-semibold">10-Second Sample</p>
-                    <p class="text-xs text-slate-400 mt-2">Epigenetic signature captured</p>
+                    <p class="text-xs text-slate-600 mt-2">Epigenetic signature captured</p>
                 </div>
                 
                 <div class="text-center">
-                    <i class="fas fa-chart-line text-gold text-3xl mb-3"></i>
-                    <p class="text-sm font-semibold">Interactive Report</p>
-                    <p class="text-xs text-slate-400 mt-2">Systems analysis & insights</p>
+                    <i class="fas fa-chart-line text-green text-3xl mb-3"></i>
+                    <p class="text-sm font-semibold text-slate-900">Interactive Report</p>
+                    <p class="text-xs text-slate-600 mt-2">Systems analysis & insights</p>
                 </div>
                 
                 <div class="text-center">
-                    <i class="fas fa-flask text-gold text-3xl mb-3"></i>
-                    <p class="text-sm font-semibold">Remedy Matches</p>
-                    <p class="text-xs text-slate-400 mt-2">Personalized recommendations</p>
+                    <i class="fas fa-flask text-green text-3xl mb-3"></i>
+                    <p class="text-sm font-semibold text-slate-900">Remedy Matches</p>
+                    <p class="text-xs text-slate-600 mt-2">Personalized recommendations</p>
                 </div>
             </div>
             
-            <button class="btn-premium bg-gold text-slate-900 hover:bg-gold/90 px-10 py-4 text-lg font-semibold mb-8 inline-flex items-center">
+            <button class="btn-premium bg-green text-slate-900 hover:bg-green/90 px-10 py-4 text-lg font-semibold mb-8 inline-flex items-center">
                 Get Your Free Wellness Scan <i class="fas fa-arrow-right ml-2"></i>
             </button>
             
-            <p class="text-xs text-slate-400 font-medium">
+            <p class="text-xs text-slate-600 font-medium">
                 Secure • Private • No spam • Results vary
             </p>
         </div>
@@ -1118,104 +1417,104 @@
     <!-- ===== SECTION 10: FINAL CTA ===== -->
     <section class="py-16 sm:py-20 lg:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white mb-6">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 mb-6">
                 Your Body Has Been Trying to Heal.
             </h2>
             
-            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-12 leading-relaxed">
+            <p class="text-base sm:text-lg text-slate-600 mb-12 leading-relaxed">
                 Now you can help. It's time to supply what's missing, clear what's in the way, and let your intelligence do what it was designed to do: heal you.
             </p>
             
             <div class="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
                 <div class="flex gap-4 items-start">
-                    <div class="w-6 h-6 rounded-lg bg-gold text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
+                    <div class="w-6 h-6 rounded-lg bg-green text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
                     <div class="text-left">
-                        <p class="font-semibold text-slate-900 dark:text-white mb-1">Reverse Aging & Degeneration</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">36 years of biological aging recovered in 36 months. Proven.</p>
+                        <p class="font-semibold text-slate-900 mb-1">Reverse Aging & Degeneration</p>
+                        <p class="text-xs text-slate-600">36 years of biological aging recovered in 36 months. Proven.</p>
                     </div>
                 </div>
                 
                 <div class="flex gap-4 items-start">
-                    <div class="w-6 h-6 rounded-lg bg-gold text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
+                    <div class="w-6 h-6 rounded-lg bg-green text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
                     <div class="text-left">
-                        <p class="font-semibold text-slate-900 dark:text-white mb-1">Restore Lost Function</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Vision, mobility, cognition, vitality. Labeled "irreversible." Now possible.</p>
+                        <p class="font-semibold text-slate-900 mb-1">Restore Lost Function</p>
+                        <p class="text-xs text-slate-600">Vision, mobility, cognition, vitality. Labeled "irreversible." Now possible.</p>
                     </div>
                 </div>
                 
                 <div class="flex gap-4 items-start">
-                    <div class="w-6 h-6 rounded-lg bg-gold text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
+                    <div class="w-6 h-6 rounded-lg bg-green text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
                     <div class="text-left">
-                        <p class="font-semibold text-slate-900 dark:text-white mb-1">Rebuild Coherence</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Body, mind, spirit aligned. Healing cascades when coherence is whole.</p>
+                        <p class="font-semibold text-slate-900 mb-1">Rebuild Coherence</p>
+                        <p class="text-xs text-slate-600">Body, mind, spirit aligned. Healing cascades when coherence is whole.</p>
                     </div>
                 </div>
                 
                 <div class="flex gap-4 items-start">
-                    <div class="w-6 h-6 rounded-lg bg-gold text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
+                    <div class="w-6 h-6 rounded-lg bg-green text-slate-900 font-bold flex items-center justify-center flex-shrink-0 text-sm mt-1">✓</div>
                     <div class="text-left">
-                        <p class="font-semibold text-slate-900 dark:text-white mb-1">Reclaim Your Future</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Vision, vitality, independence, joy. The life medicine said was over.</p>
+                        <p class="font-semibold text-slate-900 mb-1">Reclaim Your Future</p>
+                        <p class="text-xs text-slate-600">Vision, vitality, independence, joy. The life medicine said was over.</p>
                     </div>
                 </div>
             </div>
             
-            <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 text-white dark:text-slate-900 px-10 py-4 text-lg font-semibold mb-8 inline-flex items-center">
+            <button class="btn-premium bg-gradient-to-r from-slate-900 to-slate-700 from-green to-green/90 text-white text-slate-900 px-10 py-4 text-lg font-semibold mb-8 inline-flex items-center">
                 Start Accelerated Self Healing Today <i class="fas fa-arrow-right ml-2"></i>
             </button>
             
-            <p class="text-sm text-slate-600 dark:text-slate-400">
-                Questions? Call <a href="tel:808-217-9647" class="font-semibold hover:text-slate-900 dark:hover:text-white transition-colors">808-217-9647</a> or email <a href="mailto:support@remedymatch.com" class="font-semibold hover:text-slate-900 dark:hover:text-white transition-colors">support@remedymatch.com</a>
+            <p class="text-sm text-slate-600">
+                Questions? Call <a href="tel:808-217-9647" class="font-semibold hover:text-slate-900 hover:text-slate-900 transition-colors">808-217-9647</a> or email <a href="mailto:support@remedymatch.com" class="font-semibold hover:text-slate-900 hover:text-slate-900 transition-colors">support@remedymatch.com</a>
             </p>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-100 py-16 sm:py-20 border-t border-white/10">
+    <footer class="bg-slate-100 text-slate-900 py-16 sm:py-20 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-12 mb-12 pb-12 border-b border-white/10">
                 <!-- Brand -->
                 <div>
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center">
-                            <i class="fas fa-wand-magic-sparkles text-gold text-lg"></i>
+                        <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center">
+                            <i class="fas fa-wand-magic-sparkles text-green text-lg"></i>
                         </div>
-                        <p class="font-semibold text-white">Dr. Glen Swartwout</p>
+                        <p class="font-semibold text-slate-900">Dr. Glen Swartwout</p>
                     </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                    <p class="text-sm text-slate-600 leading-relaxed">
                         Your body already knows how to heal. With the right materials, energies, and information, healing happens at speeds modern medicine said were impossible.
                     </p>
                 </div>
                 
                 <!-- Links -->
                 <div>
-                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#evidence" class="hover:text-gold transition-colors">Evidence & Proof</a></li>
-                        <li><a href="#stories" class="hover:text-gold transition-colors">Documented Stories</a></li>
-                        <li><a href="#programs" class="hover:text-gold transition-colors">Programs & Pathways</a></li>
-                        <li><a href="#about" class="hover:text-gold transition-colors">About Dr. Glen</a></li>
+                    <h4 class="font-semibold text-slate-900 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#evidence" class="hover:text-green transition-colors">Evidence & Proof</a></li>
+                        <li><a href="#stories" class="hover:text-green transition-colors">Documented Stories</a></li>
+                        <li><a href="#programs" class="hover:text-green transition-colors">Programs & Pathways</a></li>
+                        <li><a href="#about" class="hover:text-green transition-colors">About Dr. Glen</a></li>
                     </ul>
                 </div>
                 
                 <!-- Contact -->
                 <div>
-                    <h4 class="font-semibold text-white mb-4">Contact</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
+                    <h4 class="font-semibold text-slate-900 mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-phone text-gold text-xs w-4"></i>
-                            <a href="tel:808-217-9647" class="hover:text-gold transition-colors">808-217-9647</a>
+                            <i class="fas fa-phone text-green text-xs w-4"></i>
+                            <a href="tel:808-217-9647" class="hover:text-green transition-colors">808-217-9647</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-envelope text-gold text-xs w-4"></i>
-                            <a href="mailto:support@remedymatch.com" class="hover:text-gold transition-colors">support@remedymatch.com</a>
+                            <i class="fas fa-envelope text-green text-xs w-4"></i>
+                            <a href="mailto:support@remedymatch.com" class="hover:text-green transition-colors">support@remedymatch.com</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-globe text-gold text-xs w-4"></i>
-                            <a href="#" class="hover:text-gold transition-colors">WizardofEyez.com</a>
+                            <i class="fas fa-globe text-green text-xs w-4"></i>
+                            <a href="#" class="hover:text-green transition-colors">WizardofEyez.com</a>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-map-marker-alt text-gold text-xs w-4"></i>
+                            <i class="fas fa-map-marker-alt text-green text-xs w-4"></i>
                             <span>USA (Virtual Worldwide)</span>
                         </li>
                     </ul>
@@ -1224,45 +1523,23 @@
             
             <!-- Disclaimer & Copyright -->
             <div>
-                <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                <p class="text-xs text-slate-600 leading-relaxed mb-6">
                     <strong>Disclaimer:</strong> Content on this website is educational and coaching material, not medical diagnosis, treatment, or advice. Dr. Glen Swartwout is not licensed to practice medicine in all jurisdictions. Results shared are individual case studies and not guaranteed. Results vary based on individual commitment, compliance, and body response. Always consult a licensed healthcare provider before starting any health protocol. No content on this site should be used to diagnose or treat any medical condition.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-600">
                     <p>&copy; 2026 Dr. Glen Swartwout. All rights reserved.</p>
                     <div class="flex gap-6">
-                        <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
-                        <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
-                        <a href="#" class="hover:text-gold transition-colors">Accessibility</a>
+                        <a href="#" class="hover:text-green transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-green transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-green transition-colors">Accessibility</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Dark Mode Toggle (Top Right) -->
-    <button id="darkModeToggle" class="fixed bottom-8 right-8 lg:top-8 lg:bottom-auto z-40 w-12 h-12 rounded-xl bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white shadow-lift border border-white/30 dark:border-white/10 flex items-center justify-center hover:shadow-lift hover:-translate-y-0.5 transition-all">
-        <i class="fas fa-moon dark:hidden"></i>
-        <i class="fas fa-sun hidden dark:block"></i>
-    </button>
-
     <script>
-        // Dark Mode Toggle with Persistence
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const htmlElement = document.documentElement;
-        
-        // Check saved preference or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme === 'dark' || (!savedTheme && systemPreference)) {
-            htmlElement.classList.add('dark');
-        }
-        
-        darkModeToggle.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
-        });
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
