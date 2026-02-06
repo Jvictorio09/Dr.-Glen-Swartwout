@@ -1,108 +1,69 @@
-<!-- ===== SECTION 8: LEAD MAGNET (Premium Scan Panel) ===== -->
-<section id="free-scan" class="relative overflow-hidden py-20 sm:py-32 border-t border-slate-200 bg-slate-950">
-    <!-- Calm backdrop -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-950"></div>
-      <div class="absolute -top-44 -right-36 h-[720px] w-[720px] rounded-full bg-emerald-500/10 blur-3xl"></div>
-      <div class="absolute -bottom-56 -left-44 h-[760px] w-[760px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-      <div class="absolute inset-0 opacity-[0.06]"
-        style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.35) 1px, transparent 0); background-size: 28px 28px;"></div>
-      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+<!-- ===== SECTION: FREE SCAN ===== -->
+<section id="free-scan" class="relative overflow-hidden py-20 sm:py-32 bg-transparent border-t border-slate-200/70">
+  <!-- Atmosphere -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_10%,rgba(16,185,129,0.10),transparent_55%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_35%,rgba(132,204,22,0.10),transparent_55%)]"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/0 via-white/0 to-slate-50/60"></div>
+    <div class="absolute inset-0 opacity-[0.05] mix-blend-multiply"
+      style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22 opacity=%220.45%22/%3E%3C/svg%3E');">
     </div>
-  
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-[1.25fr_0.75fr] gap-10 lg:gap-14 items-start">
-  
-        <!-- Left: Offer -->
-        <div>
-          <p class="text-xs font-semibold tracking-[0.18em] text-white/60 uppercase">Free scan</p>
-  
-          <h2 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white">
-            See what your body is struggling with right now.
-          </h2>
-  
-          <p class="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-2xl">
-            A 10-second voice analysis that highlights overworked systems, hidden stress patterns, and the remedies most likely to restore coherence.
+  </div>
+
+  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <!-- Premium container -->
+    <div class="rounded-3xl border border-slate-200/70 bg-white/75 backdrop-blur overflow-hidden
+                shadow-[0_28px_80px_-60px_rgba(15,23,42,0.55)]">
+      <!-- Header rail -->
+      <div class="px-6 sm:px-10 py-6 sm:py-8 border-b border-slate-200/60">
+        <div class="text-center">
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900 mb-3">
+            Free Bioenergetic Wellness Scan
+          </h3>
+          <h4 class="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900 mb-5">
+            See Where Your Body Is Struggling Right Now.
+          </h4>
+          <p class="text-lg text-slate-900/70 leading-relaxed">
+            With a 10-second voice sample, you get an online report showing:
           </p>
-  
-          <!-- Steps (clean, not cards) -->
-          <div class="mt-10 space-y-4 max-w-2xl">
-            <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-400/20">
-                <i class="fas fa-microphone"></i>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-white">1) Record a 10-second voice sample</p>
-                <p class="mt-1 text-sm text-white/70">Your current signal is captured—fast and simple.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-400/20">
-                <i class="fas fa-chart-line"></i>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-white">2) Get an interactive wellness report</p>
-                <p class="mt-1 text-sm text-white/70">Systems overview + actionable insights.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-400/20">
-                <i class="fas fa-flask"></i>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-white">3) See remedy matches</p>
-                <p class="mt-1 text-sm text-white/70">Personalized recommendations based on your current state.</p>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Trust strip -->
-          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/60">
-            <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Secure</span>
-            <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Private</span>
-            <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> No spam</span>
-            <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Results vary</span>
-          </div>
         </div>
-  
-        <!-- Right: Start panel -->
-        <div class="rounded-[1.75rem] border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_30px_120px_-70px_rgba(0,0,0,0.7)] overflow-hidden">
-          <div class="p-7 sm:p-8 border-b border-white/10">
-            <p class="text-xs font-semibold tracking-[0.18em] text-white/60 uppercase">Start here</p>
-            <h3 class="mt-3 text-2xl font-semibold tracking-tight text-white">Free Bioenergetic Wellness Scan</h3>
-            <p class="mt-3 text-sm text-white/70 leading-relaxed">
-              Takes ~2 minutes. You’ll receive your report and recommended next steps.
-            </p>
-          </div>
-  
-          <div class="p-7 sm:p-8 space-y-4">
-            <!-- “Input” placeholders (no backend assumed) -->
-            <div class="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-              <p class="text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">Email (optional)</p>
-              <p class="mt-1 text-sm text-white/80">So we can send your results</p>
-            </div>
-  
-            <div class="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-              <p class="text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">Voice sample</p>
-              <p class="mt-1 text-sm text-white/80">Record or upload (10 seconds)</p>
-            </div>
-  
-            <!-- Primary CTA -->
-            <!-- IMPORTANT: change href to your real scan flow (e.g., /scan or #scan-form) -->
-            <a href="#scan-start"
-               class="inline-flex w-full items-center justify-center rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-white/90">
-              Get Your Free Wellness Scan <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-  
-            <!-- Secondary note -->
-            <p class="text-xs text-white/50 leading-relaxed">
-              By continuing, you agree to receive your scan results. You can unsubscribe anytime.
-            </p>
-          </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="px-6 sm:px-10 py-8 sm:py-10">
+        <ul class="space-y-4 text-base text-slate-900/70">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+              <i class="fas fa-check text-[12px]"></i>
+            </span>
+            <span>Which healing processes are overworked and underpaid (organs, meridians, systems)</span>
+          </li>
+
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+              <i class="fas fa-check text-[12px]"></i>
+            </span>
+            <span>What epigenetic energy patterns may be missing</span>
+          </li>
+
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+              <i class="fas fa-check text-[12px]"></i>
+            </span>
+            <span>How specific natural remedies can enhance your coherence</span>
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="mt-10 text-center">
+          <a href="#free-scan" class="btn-primary inline-flex items-center justify-center px-7 py-3 rounded-xl">
+            Get Your Free Wellness Scan →
+          </a>
         </div>
-  
       </div>
     </div>
-  </section>
+
+    <!-- base shadow -->
+    <div class="mt-8 mx-auto h-4 w-[88%] rounded-full blur-xl bg-slate-900/10"></div>
+  </div>
+</section>

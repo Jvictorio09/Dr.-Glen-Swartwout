@@ -1,340 +1,243 @@
-<!-- ===== SECTION 5: THE DIFFERENCE (Proof Console) ===== -->
+<!-- ===== SECTION 5: THE DIFFERENCE (Proof Console) — Modernized / Copy Unchanged ===== -->
 <section id="the-difference" class="relative overflow-hidden py-20 sm:py-28 lg:py-32">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute inset-0 bg-gradient-to-b from-white via-emerald-50/25 to-white"></div>
-      <div class="absolute -top-32 -right-24 h-[520px] w-[520px] rounded-full bg-emerald-500/10 blur-3xl"></div>
-      <div class="absolute -bottom-40 -left-24 h-[560px] w-[560px] rounded-full bg-slate-900/5 blur-3xl"></div>
-      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-      <div class="absolute inset-0 opacity-[0.06]"
-        style="background-image: linear-gradient(to right, rgba(15,23,42,.35) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,.35) 1px, transparent 1px); background-size: 56px 56px;"></div>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-emerald-50/25 to-white"></div>
+    <div class="absolute -top-32 -right-24 h-[520px] w-[520px] rounded-full bg-emerald-500/10 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-24 h-[560px] w-[560px] rounded-full bg-slate-900/5 blur-3xl"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+    <!-- refined grid -->
+    <div class="absolute inset-0 opacity-[0.05]"
+      style="background-image:
+        linear-gradient(to right, rgba(15,23,42,.28) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15,23,42,.28) 1px, transparent 1px);
+        background-size: 64px 64px;">
     </div>
-  
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-10 sm:mb-14">
-        <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-slate-700 backdrop-blur">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-          THE DIFFERENCE
-        </div>
-        <h2 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900">
-          A clearer model wins.
-        </h2>
-        <p class="mt-4 text-lg sm:text-xl text-slate-600">
-          Choose what sounds like you — then see the shift.
-        </p>
-      </div>
-  
-      <!-- Console -->
-      <div class="rounded-[2rem] border border-slate-200/70 bg-white/70 backdrop-blur-xl shadow-[0_35px_120px_-25px_rgba(15,23,42,0.18)] overflow-hidden">
-        <!-- Console top bar -->
-        <div class="flex items-center justify-between gap-4 px-6 sm:px-8 py-5 border-b border-slate-200/70 bg-white/60">
-          <div class="flex items-center gap-3">
-            <div class="flex gap-2">
-              <span class="h-2.5 w-2.5 rounded-full bg-rose-400"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-            </div>
-            <div class="text-sm font-semibold text-slate-900">Comparison Console</div>
-            <div class="hidden sm:block text-sm text-slate-500">Before → After</div>
-          </div>
-  
-          <!-- Mode toggle (mobile-friendly) -->
-          <div class="flex items-center gap-2 rounded-xl border border-slate-200 bg-white/70 p-1">
-            <button data-mode="both"
-              class="console-mode px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white">
-              Both
-            </button>
-            <button data-mode="before"
-              class="console-mode px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white">
-              Before
-            </button>
-            <button data-mode="after"
-              class="console-mode px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white">
-              After
-            </button>
-          </div>
-        </div>
-  
-        <div class="grid lg:grid-cols-[420px_1fr]">
-          <!-- Left selector -->
-          <div class="border-b lg:border-b-0 lg:border-r border-slate-200/70 bg-white/55">
-            <div class="p-6 sm:p-8">
-              <p class="text-xs font-bold tracking-widest text-slate-700">SELECT A SITUATION</p>
-              <p class="mt-2 text-sm text-slate-600">We’ll show the difference in plain language.</p>
-            </div>
-  
-            <div class="px-3 pb-6 sm:px-5">
-              <!-- Item list -->
-              <button class="console-item w-full text-left rounded-2xl px-4 py-4 mb-2 border border-slate-200/70 bg-white/70 hover:bg-white transition"
-                data-id="1">
-                <div class="flex items-center justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-semibold text-slate-900">Told it's “irreversible”</div>
-                    <div class="text-xs text-slate-600 mt-1">Permanent damage. Nothing to do.</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-slate-400 text-xs"></i>
-                </div>
-              </button>
-  
-              <button class="console-item w-full text-left rounded-2xl px-4 py-4 mb-2 border border-slate-200/70 bg-white/70 hover:bg-white transition"
-                data-id="2">
-                <div class="flex items-center justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-semibold text-slate-900">Symptoms suppressed</div>
-                    <div class="text-xs text-slate-600 mt-1">Band-aids. Causes ignored.</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-slate-400 text-xs"></i>
-                </div>
-              </button>
-  
-              <button class="console-item w-full text-left rounded-2xl px-4 py-4 mb-2 border border-slate-200/70 bg-white/70 hover:bg-white transition"
-                data-id="3">
-                <div class="flex items-center justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-semibold text-slate-900">Treatments cause damage</div>
-                    <div class="text-xs text-slate-600 mt-1">Side effects. Coherence drops.</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-slate-400 text-xs"></i>
-                </div>
-              </button>
-  
-              <button class="console-item w-full text-left rounded-2xl px-4 py-4 mb-2 border border-slate-200/70 bg-white/70 hover:bg-white transition"
-                data-id="4">
-                <div class="flex items-center justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-semibold text-slate-900">Generic protocols</div>
-                    <div class="text-xs text-slate-600 mt-1">One-size-fits-all. Mediocre.</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-slate-400 text-xs"></i>
-                </div>
-              </button>
-  
-              <button class="console-item w-full text-left rounded-2xl px-4 py-4 mb-2 border border-slate-200/70 bg-white/70 hover:bg-white transition"
-                data-id="5">
-                <div class="flex items-center justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-semibold text-slate-900">Supplement cabinet chaos</div>
-                    <div class="text-xs text-slate-600 mt-1">Guessing. Expensive. Confusing.</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-slate-400 text-xs"></i>
-                </div>
-              </button>
-  
-              <button class="console-item w-full text-left rounded-2xl px-4 py-4 border border-slate-200/70 bg-white/70 hover:bg-white transition"
-                data-id="6">
-                <div class="flex items-center justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-semibold text-slate-900">Years lost</div>
-                    <div class="text-xs text-slate-600 mt-1">Slow protocols. Plateau.</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-slate-400 text-xs"></i>
-                </div>
-              </button>
-            </div>
-          </div>
-  
-          <!-- Right detail panel -->
-          <div class="relative">
-            <!-- subtle inner glow -->
-            <div class="absolute inset-0 pointer-events-none">
-              <div class="absolute left-1/2 top-1/2 h-[120%] w-[680px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.12)_0%,_rgba(255,255,255,0)_60%)]"></div>
-            </div>
-  
-            <div class="relative p-6 sm:p-8 lg:p-10">
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <p class="text-xs font-bold tracking-widest text-slate-700">DETAIL</p>
-                  <h3 id="consoleTitle" class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
-                    Told it's “irreversible”
-                  </h3>
-                </div>
-  
-                <div class="hidden sm:flex items-center gap-2 rounded-xl border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold text-slate-700 backdrop-blur">
-                  <i class="fas fa-mouse-pointer text-slate-500"></i>
-                  Click a situation
-                </div>
-              </div>
-  
-              <!-- Comparison panes -->
-              <div class="mt-7 grid gap-4 lg:grid-cols-2">
-                <!-- BEFORE -->
-                <div id="paneBefore" class="console-pane rounded-2xl border border-rose-200/70 bg-white/70 p-6 shadow-sm">
-                  <div class="flex items-center justify-between gap-3">
-                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-rose-800">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-rose-600 text-white">
-                        <i class="fas fa-times text-xs"></i>
-                      </span>
-                      BEFORE
-                    </div>
-                  </div>
-                  <p id="beforeText" class="mt-4 text-slate-700 leading-relaxed">
-                    Medicine says "nothing can be done." Prognosis of permanent damage, loss, decline.
-                  </p>
-                  <div class="mt-5 text-xs text-slate-500">
-                    Typical outcome: symptoms managed, root patterns untouched.
-                  </div>
-                </div>
-  
-                <!-- AFTER -->
-                <div id="paneAfter" class="console-pane rounded-2xl border border-emerald-200/70 bg-white/70 p-6 shadow-sm">
-                  <div class="flex items-center justify-between gap-3">
-                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-emerald-800">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-600 text-white">
-                        <i class="fas fa-check text-xs"></i>
-                      </span>
-                      AFTER
-                    </div>
-                  </div>
-                  <p id="afterText" class="mt-4 text-slate-700 leading-relaxed">
-                    Documented cases of "irreversible" conditions reversed. Biological aging reversed.
-                  </p>
-                  <div class="mt-5 text-xs text-slate-500">
-                    Model: restore coherence → supply what’s missing → recovery accelerates.
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Bottom proof strip -->
-              <div class="mt-6 rounded-2xl border border-slate-200/70 bg-white/60 px-6 py-5 backdrop-blur">
-                <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-600">
-                  <span class="inline-flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-emerald-500"></span> Coherence-first
-                  </span>
-                  <span class="inline-flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-slate-900"></span> Personalized inputs
-                  </span>
-                  <span class="inline-flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-rose-500"></span> Eliminates guesswork
-                  </span>
-                </div>
-              </div>
-  
-            </div>
+
+    <!-- subtle grain -->
+    <div class="absolute inset-0 opacity-[0.05] mix-blend-multiply"
+      style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22 opacity=%220.45%22/%3E%3C/svg%3E');">
+    </div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mx-auto max-w-3xl text-center mb-12">
+      <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 mb-4">
+        <span class="section-title-accent">THE DIFFERENCE</span>
+      </h2>
+      <p class="text-xl text-slate-900/80">
+        Common Challenges. Clear Solutions.
+      </p>
+    </div>
+
+    <!-- Comparison “Console” -->
+    <div class="rounded-3xl border border-slate-200/70 bg-white/70 backdrop-blur-xl overflow-hidden
+                shadow-[0_28px_80px_-60px_rgba(15,23,42,0.55)] mb-12">
+
+      <!-- Top rail -->
+      <div class="px-6 sm:px-10 py-5 sm:py-6 border-b border-slate-200/60">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p class="text-xs font-semibold tracking-[0.24em] uppercase text-slate-600">
+            Proof Console
+          </p>
+          <div class="hidden sm:flex items-center gap-2 text-xs text-slate-500">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70"></span>
+            <span>Common Challenges</span>
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70"></span>
+            <span>Clear Solutions</span>
           </div>
         </div>
       </div>
-  
-      <!-- CTA -->
-      <div class="text-center mt-12">
-        <a href="#programs"
-          class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-          Turn Frustration Into Breakthrough <i class="fas fa-arrow-right ml-2"></i>
-        </a>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[820px]">
+          <thead class="bg-white/60">
+            <tr class="border-b border-slate-200/70">
+              <th class="text-left py-5 px-6 sm:px-10 text-sm sm:text-base font-semibold tracking-tight text-slate-900">
+                What Goes Wrong
+              </th>
+              <th class="text-left py-5 px-6 sm:px-10 text-sm sm:text-base font-semibold tracking-tight text-slate-900">
+                How This Is Different
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="[&>tr:nth-child(odd)]:bg-white/40 [&>tr:nth-child(even)]:bg-white/15">
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>"Irreversible" becomes a self-fulfilling prophecy</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>I've seen improvement in macular degeneration, glaucoma and many other conditions textbooks call permanent thousands of times for over 40 years.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>Symptoms are suppressed, not supported to finish healing</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>I recognize symptoms as intelligent attempts to heal something deeper. Instead of fighting them, you supply what's missing so your body heals faster.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>Treatments damage what they try to save</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>Eye injections damage tissue. Drugs add new problems. You'll use natural materials, energies, and information to support and stimulate, not suppress.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>Generic protocols based on population averages</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>Biofield Analysis identifies your body's real-time needs with precision. No guessing and waiting for the results of a clinical trial.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>Cabinet full of supplements that don't work</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>Functional Formulations are so targeted and concentrated, many clients can feel them working. Fewer pills. Faster, better results.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>No one listens to what your body is saying</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>With 40 years as a medical empath trained in biocommunication, I interpret your body's energetic language in real time.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-200/60">
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>Years lost trying things that "might" help</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>Time lost trying things is irreplaceable. You can accelerate healing 12×… reversing up to a year of damage every 30 days when coherence is sustained.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/5 text-slate-700 flex-shrink-0">
+                    <i class="fas fa-xmark text-[12px]"></i>
+                  </span>
+                  <span>Conventional medicine says "nothing can be done"</span>
+                </div>
+              </td>
+              <td class="py-6 px-6 sm:px-10 text-slate-700 align-top">
+                <div class="flex gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 flex-shrink-0">
+                    <i class="fas fa-check text-[12px]"></i>
+                  </span>
+                  <span>Retina specialists are typically shocked when clients' eyes heal. You're not using their paradigm… You have your own.</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bottom rail -->
+      <div class="px-6 sm:px-10 py-5 sm:py-6 border-t border-slate-200/60 bg-white/50">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p class="text-sm text-slate-600">
+            <!-- no copy added; keep empty if you prefer -->
+          </p>
+          <div class="text-xs text-slate-500">
+            <!-- optional helper line; leave blank to avoid adding any words -->
+          </div>
+        </div>
       </div>
     </div>
-  
-    <style>
-      /* Active selector styling (quiet luxury) */
-      .console-item.is-active {
-        background: rgba(255,255,255,0.92);
-        border-color: rgba(16,185,129,0.35);
-        box-shadow: 0 18px 60px -32px rgba(16,185,129,0.45);
-        transform: translateY(-1px);
-      }
-  
-      /* Mode toggles */
-      .console-mode.is-active {
-        background: #0f172a;
-        color: #fff;
-      }
-  
-      /* Mode behavior */
-      .mode-before #paneAfter { display: none; }
-      .mode-after #paneBefore { display: none; }
-  
-      @media (max-width: 1023px) {
-        /* On smaller screens, keep it clean */
-        .mode-before #paneAfter,
-        .mode-after #paneBefore { display: none; }
-      }
-    </style>
-  
-    <script>
-      (function () {
-        // Wait for DOM to be ready
-        function initConsole() {
-          const data = {
-            1: {
-              title: 'Told it\'s "irreversible"',
-              before: 'Medicine says "nothing can be done." Prognosis of permanent damage, loss, decline.',
-              after: 'Documented cases of "irreversible" conditions reversed. Biological aging reversed.'
-            },
-            2: {
-              title: 'Symptoms suppressed',
-              before: 'Drugs mask effects. Causes pushed deeper. Band-aids on the real problem.',
-              after: 'Your body is talking. We listen. Supply what\'s missing, healing follows.'
-            },
-            3: {
-              title: 'Treatments cause damage',
-              before: 'Side effects, dependencies, new problems. Toxins accumulate. Coherence drops.',
-              after: 'Handcrafted formulations from nature. Biofield harmonization. Support healing.'
-            },
-            4: {
-              title: 'Generic protocols',
-              before: 'One-size-fits-all treatments. Your uniqueness ignored. Mediocre results.',
-              after: '10-second voice scan. 150+ formulations matched to YOUR body\'s specific needs.'
-            },
-            5: {
-              title: 'Supplement cabinet chaos',
-              before: 'Dozens of pills. Guessing. Expensive. No coherence. No guidance.',
-              after: '2–5 precise remedies. Monthly updates. No guesswork. Coherence-driven.'
-            },
-            6: {
-              title: 'Years lost',
-              before: 'Slow protocols. Plateau. Frustration. Vision, mobility, life quality fade.',
-              after: 'Up to one year of functional gains every 30 days. Months of progress in weeks.'
-            }
-          };
 
-          // Find the section by ID instead of using currentScript
-          const root = document.getElementById('the-difference');
-          if (!root) return;
-
-          const items = root.querySelectorAll('.console-item');
-          const modes = root.querySelectorAll('.console-mode');
-          const titleEl = root.querySelector('#consoleTitle');
-          const beforeEl = root.querySelector('#beforeText');
-          const afterEl = root.querySelector('#afterText');
-
-          if (!items.length || !modes.length || !titleEl || !beforeEl || !afterEl) return;
-
-          function setActive(id) {
-            items.forEach(btn => btn.classList.toggle('is-active', btn.dataset.id === String(id)));
-            if (data[id]) {
-              titleEl.textContent = data[id].title;
-              beforeEl.textContent = data[id].before;
-              afterEl.textContent = data[id].after;
-            }
-          }
-
-          function setMode(mode) {
-            root.classList.remove('mode-before', 'mode-after');
-            if (mode === 'before') root.classList.add('mode-before');
-            if (mode === 'after') root.classList.add('mode-after');
-
-            modes.forEach(b => b.classList.toggle('is-active', b.dataset.mode === mode));
-          }
-
-          items.forEach(btn => {
-            btn.addEventListener('click', () => setActive(btn.dataset.id));
-          });
-          
-          modes.forEach(btn => {
-            btn.addEventListener('click', () => setMode(btn.dataset.mode));
-          });
-
-          // Set defaults
-          setActive(1);
-          setMode('both');
-        }
-
-        // Run when DOM is ready
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initConsole);
-        } else {
-          initConsole();
-        }
-      })();
-    </script>
-  </section>
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="#programs" class="btn-primary inline-flex items-center justify-center">
+        Turn Frustration Into Breakthrough →
+      </a>
+    </div>
+  </div>
+</section>
