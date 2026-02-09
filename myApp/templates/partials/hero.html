@@ -1,231 +1,45 @@
-<!-- ===== SECTION 0: HERO (Billion-Dollar Upgrade / Copy Unchanged) ===== -->
-<section class="relative overflow-hidden bg-white">
-    <!-- Premium background atmosphere -->
-    <div class="absolute inset-0 pointer-events-none">
-      <!-- soft paper grain -->
-      <div class="absolute inset-0 opacity-[0.06] mix-blend-multiply"
-           style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22 opacity=%220.45%22/%3E%3C/svg%3E');">
-      </div>
-  
-      <!-- glow orbs -->
-      <div class="absolute -top-40 right-[-120px] h-[520px] w-[520px] rounded-full bg-emerald-200/40 blur-3xl"></div>
-      <div class="absolute -bottom-44 left-[-160px] h-[560px] w-[560px] rounded-full bg-lime-200/25 blur-3xl"></div>
-  
-      <!-- subtle vignette for contrast -->
-      <div class="absolute inset-0 bg-gradient-to-b from-white via-white to-slate-50/70"></div>
-  
-      <!-- radial spotlight behind left column -->
-      <div class="absolute left-1/2 top-24 h-[680px] w-[680px] -translate-x-1/2 rounded-full
-                  bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.14),transparent_60%)]
-                  blur-2xl">
-      </div>
+<!-- ===== SECTION 0: HERO ===== -->
+<section class="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <!-- Placeholder for background image - replace with actual image -->
+        <div class="absolute inset-0 bg-gradient-to-br from-teal-900 via-cyan-900 to-slate-900">
+            <!-- You can add an actual image here: <img src="path/to/image.jpg" alt="" class="w-full h-full object-cover opacity-90"> -->
+        </div>
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-black/40"></div>
     </div>
-  
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid items-start gap-12 lg:grid-cols-12 lg:gap-10 py-14 sm:py-18 lg:py-24">
-  
-        <!-- Left: Copy -->
-        <div class="lg:col-span-7">
-          <!-- Badge -->
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-200/60 bg-white/70 px-4 py-2
-                      shadow-[0_10px_30px_-20px_rgba(15,23,42,0.35)] backdrop-blur">
-            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700">
-              <i class="fas fa-sparkles text-sm"></i>
+    
+    <!-- Content Overlay -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 mb-6 backdrop-blur">
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal-600/20 text-teal-300">
+                <i class="fas fa-sparkles text-sm"></i>
             </span>
-            <span class="text-[12px] sm:text-xs font-semibold tracking-[0.18em] uppercase text-slate-700">
-              The Paradigm Breaker
+            <span class="text-xs font-semibold tracking-[0.18em] uppercase text-white/90">
+                The Paradigm Breaker
             </span>
-          </div>
-  
-          <!-- Headline (copy unchanged) -->
-          <h1 class="mt-7 text-3xl leading-tight sm:text-4xl sm:leading-tight lg:text-5xl lg:leading-tight font-semibold tracking-tight text-slate-900">
-            Reverse the <span class="relative inline-block">
-              <span class="absolute -inset-x-2 -inset-y-1 rounded-lg bg-emerald-600/10"></span>
-              <span class="relative text-emerald-700">"Irreversible."</span>
-            </span><br>
+        </div>
+        
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Reverse the <span class="text-cyan-400">"Irreversible."</span><br>
             Heal 12× faster than you age.
-          </h1>
-  
-          <!-- Body (copy unchanged) -->
-          <p class="mt-6 text-lg leading-relaxed text-slate-900/75">
-            Your body isn't broken. It knows how to heal…
-          </p>
-  
-          <p class="mt-4 text-lg leading-relaxed text-slate-900/75 max-w-2xl">
-            For 40+ years, Dr. Glen Swartwout (the Wizard of Wellness) has helped thousands pursue documented functional improvements in conditions labeled "incurable," including glaucoma, macular degeneration, cataracts, chronic degeneration, and brain-based decline using the science of syntropy, biofield intelligence, and his Clinical Theory of Everything.
-          </p>
-  
-          <!-- Trust Capsule (more premium + tighter) -->
-          <div class="mt-8 rounded-2xl border border-slate-200/70 bg-white/70 p-5 sm:p-6 backdrop-blur
-                      shadow-[0_18px_50px_-35px_rgba(15,23,42,0.45)]">
-            <div class="flex items-center justify-between gap-4">
-              <p class="text-[11px] font-semibold tracking-[0.22em] uppercase text-slate-600">
-                TRUSTED BY LEADERS
-              </p>
-  
-              <!-- micro credibility marks -->
-              <div class="hidden sm:flex items-center gap-2 text-[11px] text-slate-500">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70"></span>
-                <span>Clinical experience</span>
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70"></span>
-                <span>Handcrafted formulations</span>
-              </div>
-            </div>
-  
-            <div class="mt-4 flex flex-wrap gap-3">
-              <div class="group inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-3 py-2 text-sm text-emerald-800
-                          shadow-sm transition hover:-translate-y-[1px] hover:shadow-md">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600/10">
-                  <i class="fas fa-graduation-cap text-emerald-700"></i>
-                </span>
-                <span class="font-medium">Dartmouth-trained</span>
-              </div>
-  
-              <div class="group inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-3 py-2 text-sm text-emerald-800
-                          shadow-sm transition hover:-translate-y-[1px] hover:shadow-md">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600/10">
-                  <i class="fas fa-heart-pulse text-emerald-700"></i>
-                </span>
-                <span class="font-medium">Medical Empath</span>
-              </div>
-  
-              <div class="group inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-3 py-2 text-sm text-emerald-800
-                          shadow-sm transition hover:-translate-y-[1px] hover:shadow-md">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600/10">
-                  <i class="fas fa-flask text-emerald-700"></i>
-                </span>
-                <span class="font-medium">150+ Formulations</span>
-              </div>
-  
-              <div class="group inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-3 py-2 text-sm text-emerald-800
-                          shadow-sm transition hover:-translate-y-[1px] hover:shadow-md">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600/10">
-                  <i class="fas fa-bolt text-emerald-700"></i>
-                </span>
-                <span class="font-medium">40+ Years</span>
-              </div>
-            </div>
-          </div>
-  
-          <!-- CTAs (bigger, clearer hierarchy) -->
-          <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <!-- If you already have btn-primary/secondary styles, keep them.
-                 Otherwise these fallback classes make them premium. -->
+        </h1>
+        
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <a href="#get-started"
-               class="btn-primary inline-flex items-center justify-center rounded-xl px-6 py-4 text-base font-semibold
-                      shadow-[0_18px_40px_-22px_rgba(16,185,129,0.75)] transition hover:-translate-y-[1px]
-                      focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/50">
-              Begin Accelerated Self Healing →
+               class="inline-flex items-center justify-center rounded-lg border-2 border-white bg-white/10 backdrop-blur px-8 py-4 text-base font-semibold text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                Begin Accelerated Self Healing →
             </a>
-  
+            
             <a href="#how-it-works"
-               class="btn-secondary inline-flex items-center justify-center rounded-xl px-6 py-4 text-base font-semibold
-                      border border-slate-200 bg-white/70 backdrop-blur
-                      shadow-sm transition hover:-translate-y-[1px] hover:shadow-md
-                      focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-200">
-              See How Your Body Communicates→
+               class="inline-flex items-center justify-center rounded-lg bg-teal-500 px-8 py-4 text-base font-semibold text-white hover:bg-teal-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                See How Your Body Communicates →
             </a>
-          </div>
-  
-          <!-- Credibility Strip (copy unchanged) -->
-          <p class="mt-6 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-            Dartmouth-trained doctor. Medical empath. 150+ handcrafted Functional Formulations. Over 40 years of clinical breakthroughs.
-          </p>
-  
-          <!-- Optional: subtle scroll cue (no copy changes) -->
-          <div class="mt-10 hidden lg:flex items-center gap-2 text-xs text-slate-500">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white/60">
-              <i class="fas fa-arrow-down text-[12px]"></i>
-            </span>
-            <span>Explore proof & process below</span>
-          </div>
         </div>
-  
-        <!-- Right: Proof Panel (now premium + conversion oriented) -->
-        <div class="lg:col-span-5 hidden lg:block">
-          <div class="relative">
-            <!-- floating accent ring -->
-            <div class="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-emerald-300/40 bg-emerald-200/10 blur-[0.2px]"></div>
-  
-            <div class="rounded-3xl border border-emerald-200/60 bg-white/75 backdrop-blur
-                        shadow-[0_28px_80px_-55px_rgba(15,23,42,0.55)] overflow-hidden">
-              <!-- header -->
-              <div class="px-8 pt-8 pb-6 border-b border-slate-200/60">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-600/10 text-emerald-700">
-                      <i class="fas fa-chart-line text-xl"></i>
-                    </span>
-                    <div>
-                      <p class="text-[11px] font-semibold tracking-[0.22em] uppercase text-slate-600">
-                        Proof panel
-                      </p>
-                      <h3 class="text-2xl font-semibold tracking-tight text-slate-900">
-                        <span class="text-emerald-700">What Changes</span>
-                      </h3>
-                    </div>
-                  </div>
-  
-                  <!-- tiny “confidence” badge -->
-                  <div class="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-semibold text-slate-600">
-                    Clarity • Consistency • Momentum
-                  </div>
-                </div>
-              </div>
-  
-              <!-- items -->
-              <div class="px-8 py-7 space-y-6">
-                <div class="flex gap-4">
-                  <div class="h-12 w-12 rounded-2xl bg-emerald-600/10 flex items-center justify-center flex-shrink-0">
-                    <i class="fas fa-tachometer-alt text-emerald-700"></i>
-                  </div>
-                  <div>
-                    <p class="font-semibold text-slate-900">12× Faster Healing</p>
-                    <p class="mt-1 text-sm leading-relaxed text-slate-700/80">
-                      Prognosis of blindness reversed. 36 years of biological aging recovered in 36 months.
-                    </p>
-                  </div>
-                </div>
-  
-                <div class="flex gap-4">
-                  <div class="h-12 w-12 rounded-2xl bg-emerald-600/10 flex items-center justify-center flex-shrink-0">
-                    <i class="fas fa-bullseye text-emerald-700"></i>
-                  </div>
-                  <div>
-                    <p class="font-semibold text-slate-900">100% Personalized</p>
-                    <p class="mt-1 text-sm leading-relaxed text-slate-700/80">
-                      Biofield Analysis guides every remedy. Real-time customization, no guesswork.
-                    </p>
-                  </div>
-                </div>
-  
-                <div class="flex gap-4">
-                  <div class="h-12 w-12 rounded-2xl bg-emerald-600/10 flex items-center justify-center flex-shrink-0">
-                    <i class="fas fa-calendar text-emerald-700"></i>
-                  </div>
-                  <div>
-                    <p class="font-semibold text-slate-900">Monthly Updates</p>
-                    <p class="mt-1 text-sm leading-relaxed text-slate-700/80">
-                      Formulations evolve with your progress. Healing accelerates as coherence builds.
-                    </p>
-                  </div>
-                </div>
-              </div>
-  
-              <!-- footer note -->
-              <div class="px-8 py-6 border-t border-slate-200/60 bg-slate-50/60">
-                <p class="text-xs text-slate-600 text-center">
-                  *Results vary. Not guaranteed. Individual outcomes depend on commitment and body response.
-                </p>
-              </div>
-            </div>
-  
-            <!-- “anchoring” shadow base -->
-            <div class="mt-6 mx-auto h-4 w-[88%] rounded-full blur-xl bg-slate-900/10"></div>
-          </div>
-        </div>
-  
-      </div>
     </div>
-  </section>
+</section>
   
