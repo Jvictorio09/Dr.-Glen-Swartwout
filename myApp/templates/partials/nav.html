@@ -1,34 +1,70 @@
     <!-- Top Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/60 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+    <nav class="hero-nav absolute top-0 left-0 right-0 z-50 bg-transparent">
+        <div class="w-full max-w-[100vw] px-4 sm:px-5 lg:px-8 xl:px-12 2xl:px-16">
+            <div class="h-20 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-x-2">
+                <!-- Desktop Left Nav — hug left edge of content area -->
+                <div class="hidden lg:flex w-full min-w-0 items-center justify-start gap-0.5 xl:gap-1">
+                    <a href="#about" class="px-3 py-2 text-[13px] font-light tracking-[0.04em] text-white/80 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#programs" class="px-3 py-2 text-[13px] font-light tracking-[0.04em] text-white/80 hover:text-white transition-colors duration-300">Programs</a>
+                    <a href="#evidence" class="px-3 py-2 text-[13px] font-light tracking-[0.04em] text-white/80 hover:text-white transition-colors duration-300">Evidence</a>
+                    <a href="#stories" class="px-3 py-2 text-[13px] font-light tracking-[0.04em] text-white/80 hover:text-white transition-colors duration-300">Stories</a>
+                </div>
+
                 <!-- Logo / Brand -->
-                <div class="flex items-center gap-2 flex-shrink-0">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green to-green/80 flex items-center justify-center">
-                        <i class="fas fa-wand-magic-sparkles text-white text-lg"></i>
+                <div class="flex h-full items-center justify-between lg:justify-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-white/95 flex items-center justify-center">
+                            <i class="fas fa-wand-magic-sparkles text-[#0a2f32] text-[11px]"></i>
+                        </div>
+                        <div class="hidden sm:block">
+                            <div class="text-[12px] font-semibold text-white">Dr. Glen</div>
+                            <div class="text-[11px] text-white/85 font-semibold">Research Institute</div>
+                        </div>
                     </div>
-                    <div class="font-bold text-slate-900 hidden sm:block">
-                        <div class="text-sm font-display">Dr. Glen</div>
-                        <div class="text-xs text-slate-600">Research Institute</div>
-                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button type="button"
+                            id="mobile-nav-toggle"
+                            class="lg:hidden p-2 rounded-lg border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors"
+                            aria-expanded="false"
+                            aria-controls="mobile-nav-panel"
+                            aria-label="Open menu">
+                        <i class="fas fa-bars text-lg mobile-nav-icon-open" aria-hidden="true"></i>
+                        <i class="fas fa-times text-lg mobile-nav-icon-close hidden" aria-hidden="true"></i>
+                    </button>
                 </div>
-                
-                <!-- Desktop Nav -->
-                <div class="hidden lg:flex items-center gap-2">
-                    <a href="#how-it-works" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-300">How It Works</a>
-                    <a href="#evidence" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-300">Evidence</a>
-                    <a href="#stories" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-300">Stories</a>
-                    <a href="#programs" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-300">Programs</a>
-                    <a href="#about" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-300">About</a>
-                    <div class="divider mx-3 h-6 bg-slate-300"></div>
-                    <a href="#free-scan" class="px-3.5 py-2 text-sm font-medium text-green/90 hover:text-green transition-colors duration-300 inline-flex items-center gap-1"><i class="fas fa-scan"></i> Free Scan</a>
-                    <a href="#get-started" class="btn-primary text-sm py-2 px-5 ml-1 inline-flex items-center">Get Started</a>
+
+                <!-- Desktop Right Nav — hug right edge of content area -->
+                <div class="hidden lg:flex w-full min-w-0 items-center justify-end gap-1 xl:gap-2">
+                    <a href="#contact" class="px-3 py-2 text-[13px] font-light tracking-[0.04em] text-white/80 hover:text-white transition-colors duration-300">Contact</a>
+                    <a href="#privacy-policy" class="px-3 py-2 text-[13px] font-light tracking-[0.04em] text-white/80 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#get-started" class="inline-flex items-center rounded-full border border-white/65 px-4 py-2 text-[12px] font-medium tracking-[0.04em] text-white hover:bg-white/10 transition-colors duration-300">Get Started</a>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2 rounded-lg bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors">
-                    <i class="fas fa-bars text-lg"></i>
-                </button>
+            </div>
+            <div class="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-x-2 mt-1.5">
+                <div class="h-px w-full min-w-0 bg-white/40" aria-hidden="true"></div>
+                <div class="w-28 shrink-0 xl:w-32 2xl:w-36" aria-hidden="true"></div>
+                <div class="h-px w-full min-w-0 bg-white/40" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <!-- Mobile menu (full-width panel under header) -->
+        <div id="mobile-nav-backdrop"
+             class="hidden lg:hidden fixed inset-0 top-20 z-[35] bg-black/50"
+             aria-hidden="true"></div>
+        <div id="mobile-nav-panel"
+             class="hidden lg:hidden fixed left-0 right-0 top-20 z-[45] max-h-[min(calc(100vh-5rem),calc(100dvh-5rem))] overflow-y-auto border-b border-white/15 bg-[#0a1f24]/98 backdrop-blur-xl shadow-2xl"
+             role="dialog"
+             aria-modal="true"
+             aria-label="Site menu">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-1">
+                <a href="#about" class="mobile-nav-link rounded-lg px-3 py-3 text-[15px] font-light tracking-[0.04em] text-white/90 hover:bg-white/10 hover:text-white transition-colors">About</a>
+                <a href="#programs" class="mobile-nav-link rounded-lg px-3 py-3 text-[15px] font-light tracking-[0.04em] text-white/90 hover:bg-white/10 hover:text-white transition-colors">Programs</a>
+                <a href="#evidence" class="mobile-nav-link rounded-lg px-3 py-3 text-[15px] font-light tracking-[0.04em] text-white/90 hover:bg-white/10 hover:text-white transition-colors">Evidence</a>
+                <a href="#stories" class="mobile-nav-link rounded-lg px-3 py-3 text-[15px] font-light tracking-[0.04em] text-white/90 hover:bg-white/10 hover:text-white transition-colors">Stories</a>
+                <a href="#contact" class="mobile-nav-link rounded-lg px-3 py-3 text-[15px] font-light tracking-[0.04em] text-white/90 hover:bg-white/10 hover:text-white transition-colors">Contact</a>
+                <a href="#privacy-policy" class="mobile-nav-link rounded-lg px-3 py-3 text-[15px] font-light tracking-[0.04em] text-white/90 hover:bg-white/10 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#get-started" class="mobile-nav-link mt-2 inline-flex items-center justify-center rounded-full border border-white/65 px-4 py-3 text-[13px] font-medium tracking-[0.04em] text-white hover:bg-white/10 transition-colors">Get Started</a>
             </div>
         </div>
     </nav>

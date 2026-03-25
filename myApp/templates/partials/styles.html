@@ -1,4 +1,20 @@
 <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overscroll-behavior-x: none;
+    }
+
+    /* Stronger than hidden on supporting browsers — avoids 1px horizontal “bleed” / rubber-band gaps */
+    @supports (overflow: clip) {
+        html {
+            overflow-x: clip;
+        }
+    }
+
     /* Global transition tone */
     * { @apply transition-all duration-300 ease-out; }
 
@@ -40,6 +56,24 @@
     nav a { position: relative; }
     nav a::after { content: ''; position: absolute; bottom: -2px; left: 50%; width: 0; height: 1px; background: rgba(212,165,116,0.6); transition: width 0.4s ease-out, left 0.4s ease-out; }
     nav a:hover::after { width: 100%; left: 0; }
+    .hero-nav a::after { display: none; }
+
+    .hero-headline {
+        font-family: 'Playfair Display', 'IBM Plex Serif', serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+
+    .hero-curve {
+      position: relative;
+      margin-top: -2px;
+      line-height: 0;
+    }
+    .hero-curve svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+    }
 
     /* Buttons */
     .btn-primary, .btn-prestige {

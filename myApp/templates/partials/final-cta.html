@@ -19,14 +19,13 @@
       <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
       <div class="px-7 sm:px-12 py-12 sm:py-16">
-        <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
-          <!-- Left: headline + refined list -->
-          <div class="lg:col-span-8">
+        <div class="grid gap-10 lg:gap-12 lg:grid-cols-2 lg:items-center">
+          <!-- Left: headline, list, CTA -->
+          <div class="order-2 lg:order-1">
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.03]">
               Your Body Has Been Trying to Heal. Now You Can Help.
             </h2>
 
-            <!-- Refined list: no checkboxes, no boxes, just typography + rhythm -->
             <div class="mt-10 max-w-2xl">
               <div class="space-y-5 text-lg sm:text-xl text-slate-900/75 leading-relaxed">
                 <div class="flex gap-4">
@@ -50,23 +49,25 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Right: CTA column (minimal, premium, aligned) -->
-          <div class="lg:col-span-4">
-            <div class="rounded-2xl border border-slate-200/70 bg-white/80 backdrop-blur px-6 py-7
-                        shadow-[0_22px_70px_-60px_rgba(15,23,42,0.55)]">
+            <div class="mt-10 max-w-md">
               <a href="#get-started"
-                 class="btn-primary w-full inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base sm:text-lg">
+                 class="btn-primary w-full inline-flex items-center justify-center px-7 py-4 rounded-2xl text-base sm:text-lg text-center">
                 Start Accelerated Self Healing Today →
               </a>
+            </div>
+          </div>
 
-              <!-- No extra copy; just a quiet “credibility rhythm” -->
-              <div class="mt-6 flex items-center justify-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500/70"></span>
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500/35"></span>
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500/20"></span>
-              </div>
+          <!-- Right: portrait -->
+          <div class="order-1 lg:order-2">
+            <div class="relative aspect-[4/5] w-full max-w-lg mx-auto lg:max-w-none overflow-hidden rounded-2xl border border-slate-200/70 shadow-[0_22px_70px_-50px_rgba(15,23,42,0.45)]">
+              <img
+                src="https://res.cloudinary.com/dcuswyfur/image/upload/v1774455513/portrait-person-practicing-yoga-outdoors-nature_1_2_sbtntb.png"
+                alt="Person practicing yoga outdoors in nature"
+                class="absolute inset-0 h-full w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
           </div>
         </div>
